@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="people">
+      <h1>The following people use my app</h1>
+      <!-- the following lines of code below allows you to loop through whatever array of objects you have and will display them on the page. this is how you would write a loop in mustache. pretty useful for a movie app where you would need to display many results on a page at once. so pretty much right here the ul is going to append every single user in that array of objects and make them into a list item. -->
+      <ul>
+        {{ #users }}
+        <li>{{ name }} is {{ age }} years old.</li>
+        {{/users}}
+        <!-- this code below is pretty much an if else statement so if the users array is empty, this is what will happen -->
+        {{^users}}
+        <h2>No users yet!</h2>
+        {{/users}}
+      </ul>
+    </div>
+  </body>
+</html>
