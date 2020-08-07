@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Poppins';
+}
+
+
+button:focus {
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .main {
+        height: 200vh;
+        width: 100%;
+        background-color: black;
+    }
+
+    .movies {
+        height: 13vh;
+        width: 100%;
+        margin: 35px 10px;
+    }
+
+    .genre {
+        color: white;
+    }
+
+    .movierow {
+        height: 100%;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+
+    .box {
+        height: 100%;
+        width: 50%;
+        background-color: rgb(29, 29, 29);
+        display: inline-block;
+        margin: 0 1px;
+        box-shadow: 0 8px 10px;
+    }
+
+    .box2 {
+        height: 100%;
+        width: 50%;
+        background-color: rgb(143, 143, 143);
+        display: inline-block;
+    }
+
+    .topmenu {
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 10px;
+    }
+
+    .burger {
+        margin: auto 0;
+        padding: 2px 4px;
+        height: 25px;
+        width: 25px;
+        border-radius: 10%;
+        border: white 3px solid;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .burger>.line1 {
+        width: 90%;
+        height: 4px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+    .burger>.line2 {
+        width: 50%;
+        height: 4px;
+        background-color: white;
+        margin: 2px 0;
+    }
+
+    .herotitle {
+        height: 7vh;
+        width: 50%;
+        text-align: center;
+    }
+
+    .herotitle>h1 {
+        font-size: 35px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 6.5px;
+        color: white;
+    }
+
+    .herotitle>p {
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+    }
+
+    .usericon {
+        margin: auto 0;
+        height: 45px;
+        width: 45px;
+        background-color: rgb(204, 40, 73);
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+
+    .searchdiv {
+        height: 5vh;
+        width: 100%;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .searchdiv>input {
+        height: 80%;
+        width: 70%;
+        background-color: white;
+        border-radius: 30px 0 0 30px;
+        margin: auto 0;
+        padding-left: 7px;
+        font-size: 11px;
+        border: 1px solid lightgrey;
+    }
+
+    .searchdiv>.submitsearch {
+        height: 80%;
+        width: 15%;
+        background-color: rgb(204, 40, 73);
+        border-radius: 0 30px 30px 0px;
+        border: none;
+        margin: auto 0;
+    }
+
+    .submitsearch>i {
+        font-size: 12px;
+        color: white;
+        margin: auto 0;
+    }
+}

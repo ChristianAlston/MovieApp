@@ -6,20 +6,23 @@ const mustacheExpress = require('mustache-express');
 const PORT = 4000;
 
 
+
 // parse json data so that the browser can read it
 app.use(bodyParser.json())
 
+// this combines  the path module with whatever directory name you're in concatenated with the folder. 
+const VIEWS_PATH = path.join(__dirname, '/views')
 
 // Using other files
 app.use(express.static("css"))
 app.use(express.static("images"))
 
 // what you will be viewing the files in 
-app.engine('mustache', mustacheExpress())
+app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'))
 
 
 // you are telling the computer where you want to grab your files from which is from the views folder. your views are coming from the view folder. 
-app.set('views', './views')
+app.set('views', VIEWS_PATH)
 app.set('view engine', 'mustache')
 
 
@@ -45,6 +48,10 @@ app.get('/signup', (req, res) => {
 
 app.get('/moviegenres', (req, res) => {
     res.render('moviegenres')
+})
+
+app.get('/moviepage', (req, res) => {
+    res.render('moviepage')
 })
 
 
