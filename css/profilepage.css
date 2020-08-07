@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: "Poppins";
+}
+
+body {
+    background-color: rgb(73, 73, 73);
+    padding: 10px;
+}
+
+button:focus {
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 570px) {
+    @keyframes go {
+        0% {
+            width: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+
+    @keyframes up {
+        0% {
+            height: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            height: 100%;
+        }
+    }
+
+    @keyframes re {
+        0% {
+
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes colorUp {
+        0% {
+            color: transparent;
+
+        }
+
+        100% {
+            color: white;
+        }
+    }
+
+    .main {
+        height: 100%;
+        width: 100%;
+    }
+
+    .profilepage {
+        height: 100%;
+        width: 90%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        animation-name: go;
+        animation-duration: .5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+        border-radius: 30px;
+        position: relative;
+    }
+
+    .topbox {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        top: 0;
+        width: 100%;
+        height: 20%;
+        background: rgb(255, 55, 96);
+        background: linear-gradient(100deg,
+                rgba(255, 55, 96, 1) 0%,
+                rgb(197, 38, 38) 100%);
+        border-radius: 30px 30px 0 0;
+    }
+
+    .userpic {
+        height: 100px;
+        width: 100px;
+        background-color: rgb(73, 73, 73);
+        border-radius: 50%;
+        border: 2px solid white;
+        margin: auto;
+        transform: translateY(80%);
+    }
+
+    .username {
+        color: white;
+        font-weight: bold;
+    }
+
+}

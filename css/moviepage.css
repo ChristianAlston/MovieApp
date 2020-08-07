@@ -2,9 +2,12 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-    font-family: 'Poppins';
+    font-family: "Poppins";
 }
 
+body {
+    background-color: rgb(71, 71, 71);
+}
 
 button:focus {
     outline: none;
@@ -14,21 +17,78 @@ input:focus {
     outline: none;
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 570px) {
+
+    @keyframes go {
+        0% {
+            width: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+
+    @keyframes up {
+        0% {
+            height: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            height: 100%;
+        }
+    }
+
+    @keyframes re {
+        0% {
+
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes colorUp {
+        0% {
+            color: transparent;
+
+        }
+
+        100% {
+            color: white;
+        }
+    }
+
     .main {
         height: 200vh;
         width: 100%;
         background-color: black;
+        display: flex;
+        flex-direction: column;
+        animation-name: go;
+        animation-duration: .3s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
     }
 
     .movies {
         height: 13vh;
-        width: 100%;
-        margin: 35px 10px;
+        width: 97%;
+        margin: 35px 5px;
     }
 
     .genre {
         color: white;
+        animation-name: show;
+        animation-duration: 3s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
     }
 
     .movierow {
@@ -37,8 +97,8 @@ input:focus {
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-    }
 
+    }
 
     .box {
         height: 100%;
@@ -47,6 +107,15 @@ input:focus {
         display: inline-block;
         margin: 0 1px;
         box-shadow: 0 8px 10px;
+        animation-name: up;
+        animation-duration: .5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+
+    }
+
+    .box:hover {
+        box-shadow: blanchedalmond 1px 1px 1px;
     }
 
     .box2 {
@@ -54,6 +123,10 @@ input:focus {
         width: 50%;
         background-color: rgb(143, 143, 143);
         display: inline-block;
+        animation-name: up;
+        animation-duration: .7s;
+        animation-iteration-count: initial;
+        animation-direction: alternate-reverse forwards;
     }
 
     .topmenu {
@@ -74,6 +147,12 @@ input:focus {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .burger:hover {
+        border: rgb(204, 40, 73) 3px solid;
+        cursor: pointer;
     }
 
     .burger>.line1 {
@@ -84,7 +163,7 @@ input:focus {
     }
 
     .burger>.line2 {
-        width: 50%;
+        width: 70%;
         height: 4px;
         background-color: white;
         margin: 2px 0;
@@ -102,12 +181,20 @@ input:focus {
         font-weight: bold;
         letter-spacing: 6.5px;
         color: white;
+        animation-name: colorUp;
+        animation-duration: 1.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
     }
 
     .herotitle>p {
         color: white;
         text-transform: capitalize;
         margin-bottom: 20px;
+        animation-name: colorUp;
+        animation-duration: 4.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
     }
 
     .usericon {
@@ -117,12 +204,17 @@ input:focus {
         background-color: rgb(204, 40, 73);
         border: 2px solid white;
         border-radius: 50%;
+        animation-name: re;
+        animation-duration: 3.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+
     }
 
     .searchdiv {
         height: 5vh;
         width: 100%;
-        margin: 20px 0;
+        margin: 30px 0;
         display: flex;
         justify-content: center;
     }
@@ -151,5 +243,48 @@ input:focus {
         font-size: 12px;
         color: white;
         margin: auto 0;
+    }
+
+    .side {
+        background-color: rgb(14, 14, 14);
+        position: fixed;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+        transition: 0.25s;
+        opacity: 0.9;
+    }
+
+    .side>ul {
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        display: block;
+        list-style: none;
+    }
+
+    .side>ul>a {
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+        font-size: 14px;
+        color: white;
+        background-color: rgb(204, 40, 73);
+        margin: 10px 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .side>i {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
     }
 }

@@ -15,30 +15,8 @@
     <link rel="stylesheet" href="/moviepage.css" />
   </head>
   <body>
-    <div class="main">
-      <div class="topmenu">
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line1"></div>
-        </div>
-        <div class="herotitle">
-          <h1>flixify</h1>
-          <p>movies everywhere</p>
-        </div>
-        <div class="usericon"></div>
-      </div>
-      <div class="searchdiv">
-        <input
-          type="search"
-          name="search"
-          id="search"
-          placeholder="Search for a movie..."
-        />
-        <button class="submitsearch" type="submit">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
+    <div id="main" class="main">
+      {{>menu}}
       <div class="movies">
         <h4 class="genre">Top Movies</h4>
         <div class="movierow">
@@ -145,4 +123,21 @@
       </div>
     </div>
   </body>
+  <script>
+    function showMenu() {
+      document.getElementById("side").style.width = "100%";
+    }
+
+    function closeMenu() {
+      document.getElementById("side").style.width = "0%";
+      document.getElementById("side").style.opacity = "0";
+    }
+
+    document.getElementById("side").addEventListener("click", () => {
+      document.getElementById("side").style.width = "0%";
+    });
+
+    document.getElementById("burger").addEventListener("click", showMenu);
+    document.getElementById("close").addEventListener("click", closeMenu);
+  </script>
 </html>

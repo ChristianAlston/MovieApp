@@ -1,158 +1,219 @@
 * {
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
-  font-family: "Roboto";
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: "Roboto";
 }
 
 body {
-  background-color: rgb(43, 43, 43);
+    background-color: rgb(43, 43, 43);
 }
 
 button:focus {
-  outline: none;
+    outline: none;
 }
 
 input:focus {
-  outline: none;
+    outline: none;
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .main {
-    height: 85vh;
-    background-color: white;
-    width: 95%;
-    margin: 10% auto;
-    border-radius: 40px;
-    position: relative;
-    box-shadow: rgb(0, 0, 0) 0px 10px 10px;
-  }
+@media screen and (min-width: 320px) and (max-width: 570px) {
+    @keyframes go {
+        0% {
+            width: 0%;
+            opacity: 0;
+        }
 
-  .herotitle {
-    height: 10vh;
-    width: 100%;
-    text-align: center;
-  }
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
 
-  .herotitle > h1 {
-    font-size: 35px;
-    padding-top: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 11px;
-    color: white;
-  }
+    @keyframes up {
+        0% {
+            height: 0%;
+            opacity: 0;
+        }
 
-  .herotitle > p {
-    color: white;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-  }
+        100% {
+            opacity: 1;
+            height: 20%;
+        }
+    }
 
-  .herobox {
-    background: rgb(255, 55, 96);
-    background: linear-gradient(
-      100deg,
-      rgba(255, 55, 96, 1) 0%,
-      rgb(197, 38, 38) 100%
-    );
-    text-align: center;
-    height: 22%;
-    border-radius: 40px 40px 0 0;
-    padding: 10px;
-  }
+    @keyframes re {
+        0% {
 
-  .herobox > h1 {
-    color: white;
-    font-weight: 400;
-    transform: translateY(70%);
-  }
+            opacity: 0;
+        }
 
-  .avatarbox {
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    background-image: url(/profilepic.jpg);
-    background-position: top;
-    background-size: cover;
-    border: 2px solid rgb(221, 221, 221);
-    box-shadow: 1px 5px 10px lightgrey;
-    margin: auto;
-    transform: translateY(45%);
-  }
+        100% {
+            opacity: 1;
+        }
+    }
 
-  .formbox {
-    height: 65%;
-    width: 90%;
-    margin: 0 15px;
-    text-align: center;
-    position: absolute;
-    bottom: 9%;
-  }
+    @keyframes colorUp {
+        0% {
+            color: transparent;
 
-  .formbox > h2 {
-    text-transform: capitalize;
-    text-align: left;
-    margin-top: 20px;
-  }
+        }
 
-  .formbox > p {
-    font-weight: 400;
-    color: rgb(129, 129, 129);
-  }
+        100% {
+            color: white;
+        }
+    }
 
-  form {
-    position: absolute;
-    bottom: 15%;
-    width: 100%;
-  }
+    .main {
+        height: 85vh;
+        background-color: white;
+        width: 95%;
+        margin: 10% auto;
+        border-radius: 40px;
+        position: relative;
+        box-shadow: rgb(0, 0, 0) 0px 10px 10px;
+        animation-name: re;
+        animation-duration: .8s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
 
-  label {
-    color: rgb(167, 167, 167);
-    float: left;
-    font-size: 12px;
-    margin-top: -5px;
-  }
+    .herotitle {
+        height: 10vh;
+        width: 100%;
+        text-align: center;
 
-  input {
-    float: left;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: lightgray 1px solid;
-    height: 34px;
-    width: 100%;
-    margin-bottom: 12px;
-    background-color: white;
-  }
+    }
 
-  .formbox > a {
-    position: absolute;
-    right: 5%;
-    bottom: 35%;
-    font-size: 12px;
-    text-decoration: none;
-    color: rgb(255, 55, 96);
-  }
+    .herotitle>h1 {
+        font-size: 35px;
+        padding-top: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 11px;
+        color: white;
+        animation-name: colorUp;
+        animation-duration: 2.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
 
-  .signup {
-    position: absolute;
-    bottom: -14%;
-    height: 40px;
-    width: 80%;
-    background-color: transparent;
-    left: 10%;
-    border: 2px solid rgb(255, 55, 96);
-    color: rgb(255, 55, 96);
-    text-transform: uppercase;
-    font-weight: bold;
-  }
+    .herotitle>p {
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        animation-name: colorUp;
+        animation-duration: 4.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
 
-  .main > a {
-    position: absolute;
-    bottom: 5%;
-    transform: translate(50%);
-    text-decoration: none;
-    color: rgb(167, 167, 167);
-  }
+    .herobox {
+        background: rgb(255, 55, 96);
+        background: linear-gradient(100deg,
+                rgba(255, 55, 96, 1) 0%,
+                rgb(197, 38, 38) 100%);
+        text-align: center;
+        height: 22%;
+        border-radius: 40px 40px 0 0;
+        padding: 10px;
+        animation-name: up;
+        animation-duration: .5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .herobox>h1 {
+        color: white;
+        font-weight: 400;
+        transform: translateY(70%);
+    }
+
+    .avatarbox {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background-image: url(/profilepic.jpg);
+        background-position: top;
+        background-size: cover;
+        border: 2px solid rgb(221, 221, 221);
+        box-shadow: 1px 5px 10px lightgrey;
+        margin: auto;
+        transform: translateY(45%);
+    }
+
+    .formbox {
+        height: 65%;
+        width: 90%;
+        margin: 0 15px;
+        text-align: center;
+        position: absolute;
+        bottom: 9%;
+    }
+
+    .formbox>h2 {
+        text-transform: capitalize;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .formbox>p {
+        font-weight: 400;
+        color: rgb(129, 129, 129);
+    }
+
+    form {
+        position: absolute;
+        bottom: 15%;
+        width: 100%;
+    }
+
+    label {
+        color: rgb(167, 167, 167);
+        float: left;
+        font-size: 12px;
+        margin-top: -5px;
+    }
+
+    input {
+        float: left;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: lightgray 1px solid;
+        height: 34px;
+        width: 100%;
+        margin-bottom: 12px;
+        background-color: white;
+    }
+
+    .formbox>a {
+        position: absolute;
+        right: 5%;
+        bottom: 35%;
+        font-size: 12px;
+        text-decoration: none;
+        color: rgb(255, 55, 96);
+    }
+
+    .signup {
+        position: absolute;
+        bottom: -14%;
+        height: 40px;
+        width: 80%;
+        background-color: transparent;
+        left: 10%;
+        border: 2px solid rgb(255, 55, 96);
+        color: rgb(255, 55, 96);
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .main>a {
+        position: absolute;
+        bottom: 5%;
+        transform: translate(50%);
+        text-decoration: none;
+        color: rgb(167, 167, 167);
+    }
 }
