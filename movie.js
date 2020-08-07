@@ -10,6 +10,10 @@ const PORT = 4000;
 app.use(bodyParser.json())
 
 
+// Using other files
+app.use(express.static("css"))
+app.use(express.static("images"))
+
 // what you will be viewing the files in 
 app.engine('mustache', mustacheExpress())
 
@@ -39,8 +43,12 @@ app.get('/signup', (req, res) => {
     res.render('signup')
 })
 
+app.get('/moviegenres', (req, res) => {
+    res.render('moviegenres')
+})
 
-// So whenever you are posting something, you need to specify that you are posting the data from whatever element under a specific name. Whatever you wrote for the name "" attribute in the input element, is what you would use here so for ex: if you used fullname in the html page, you would use req.body.fullname
+
+// So whenever you are posting something, you need to specify that you are posting the data from whatever element under a specific name. Whatever you wrote for the name = "" attribute in the input element, is what you would use here so for ex: if you used fullname in the html page, you would use req.body.fullname
 app.post('/signup', (req, res) => {
     let nameOf = req.body.name;
     let email = req.body.email;

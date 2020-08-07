@@ -1,163 +1,164 @@
 * {
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-    font-family: 'Roboto';
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Roboto";
 }
 
 body {
-    background-color: rgb(43, 43, 43);
-
+  background-color: rgb(43, 43, 43);
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
+  .main {
+    height: 85vh;
+    background-color: white;
+    width: 95%;
+    margin: 10% auto;
+    border-radius: 35px;
+    box-shadow: rgb(0, 0, 0) 0px 10px 10px;
+  }
 
-    .main {
-        height: 85vh;
-        background-color: white;
-        width: 95%;
-        margin: 10% auto;
-        border-radius: 35px;
-        box-shadow: rgb(0, 0, 0) 0px 10px 10px;
-    }
+  .herotitle {
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+  }
 
-    .herotitle {
-        height: 10vh;
-        width: 100%;
-        text-align: center;
-    }
+  .herotitle > h1 {
+    font-size: 35px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 11px;
+    color: white;
+  }
 
-    .herotitle>h1 {
-        font-size: 35px;
-        padding-top: 5px;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 11px;
-        color: white;
-    }
+  .herotitle > p {
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
 
-    .herotitle>p {
-        color: white;
-        text-transform: capitalize;
-        margin-bottom: 20px;
-    }
+  .herobox {
+    background: rgb(255, 55, 96);
+    background: linear-gradient(
+      100deg,
+      rgba(255, 55, 96, 1) 0%,
+      rgb(197, 38, 38) 100%
+    );
+    text-align: center;
+    height: 22%;
+    border-radius: 35px 35px 0 0;
+    padding: 10px;
+  }
 
-    .herobox {
-        background: rgb(255, 55, 96);
-        background: linear-gradient(100deg, rgba(255, 55, 96, 1) 0%, rgb(197, 38, 38) 100%);
-        text-align: center;
-        height: 22%;
-        border-radius: 35px 35px 0 0;
-        padding: 10px;
-    }
+  .herobox > h3 {
+    color: white;
+    font-weight: 100;
+    transform: translateY(70%);
+  }
 
-    .herobox>h3 {
-        color: white;
-        font-weight: 100;
-        transform: translateY(70%)
-    }
+  .herobox > h2 {
+    color: white;
+    font-weight: 300;
+    transform: translateY(70%);
+  }
 
-    .herobox>h2 {
-        color: white;
-        font-weight: 300;
-        transform: translateY(70%)
-    }
+  .avatarbox {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-image: url(/profilepic.jpg);
+    background-position: top;
+    background-size: cover;
+    border: 2px solid rgb(221, 221, 221);
+    box-shadow: 1px 5px 10px lightgrey;
+    margin: auto;
+    transform: translateY(45%);
+  }
 
-    .avatarbox {
-        height: 120px;
-        width: 120px;
-        border-radius: 50%;
-        background-image: url(/images/profilepic.jpg);
-        background-position: top;
-        background-size: cover;
-        border: 2px solid rgb(221, 221, 221);
-        box-shadow: 1px 5px 10px lightgrey;
-        margin: auto;
-        transform: translateY(45%)
-    }
+  .formbox {
+    height: 50%;
+    width: 90%;
+    margin: 0 15px;
+    text-align: center;
+    position: absolute;
+    bottom: 4%;
+  }
 
-    .formbox {
-        height: 50%;
-        width: 90%;
-        margin: 0 15px;
-        text-align: center;
-        position: absolute;
-        bottom: 4%;
-    }
+  .formbox > h2 {
+    text-transform: capitalize;
+    text-align: left;
+    margin-top: 20px;
+  }
 
-    .formbox>h2 {
-        text-transform: capitalize;
-        text-align: left;
-        margin-top: 20px;
-    }
+  .formbox > p {
+    font-weight: 400;
+    color: rgb(129, 129, 129);
+    text-align: left;
+  }
 
-    .formbox>p {
-        font-weight: 400;
-        color: rgb(129, 129, 129);
-        text-align: left;
-    }
+  form {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+  }
 
-    form {
-        position: absolute;
-        bottom: 50%;
-        width: 100%;
-    }
+  label {
+    color: rgb(167, 167, 167);
+    float: left;
+    font-size: 12px;
+    margin-top: -10px;
+  }
 
-    label {
-        color: rgb(167, 167, 167);
-        float: left;
-        font-size: 12px;
-        margin-top: -10px;
-    }
+  input {
+    float: left;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: lightgray 1px solid;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 12px;
+    background-color: white;
+  }
 
-    input {
-        float: left;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: lightgray 1px solid;
-        height: 30px;
-        width: 100%;
-        margin-bottom: 12px;
-        background-color: white;
-    }
+  .formbox > a {
+    position: absolute;
+    right: 5%;
+    bottom: 35%;
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(255, 55, 96);
+  }
 
-    .formbox>a {
-        position: absolute;
-        right: 5%;
-        bottom: 35%;
-        font-size: 12px;
-        text-decoration: none;
-        color: rgb(255, 55, 96)
-    }
+  .login {
+    position: absolute;
+    bottom: 15%;
+    transform: translate(-50%);
+    height: 40px;
+    width: 80%;
+    background-color: transparent;
+    border: 2px solid rgb(255, 55, 96);
+    color: rgb(255, 55, 96);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 
-    .login {
-        position: absolute;
-        bottom: 15%;
-        transform: translate(-50%);
-        height: 40px;
-        width: 80%;
-        background-color: transparent;
-        border: 2px solid rgb(255, 55, 96);
-        color: rgb(255, 55, 96);
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
-    .main>a {
-        position: absolute;
-        bottom: 5%;
-        transform: translate(50%);
-        text-decoration: none;
-        color: rgb(167, 167, 167)
-    }
-
+  .main > a {
+    position: absolute;
+    bottom: 5%;
+    transform: translate(50%);
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+  }
 }

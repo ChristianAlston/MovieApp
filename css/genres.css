@@ -1,78 +1,78 @@
 * {
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-    font-family: 'Roboto';
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Roboto";
 }
 
 body {
-    background-color: rgb(43, 43, 43);
-
+  background-color: rgb(43, 43, 43);
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    .herotitle {
-        height: 10vh;
-        width: 100%;
-        text-align: center;
-    }
+  .herotitle {
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+  }
 
-    .herotitle>h1 {
-        font-size: 35px;
-        padding-top: 5px;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 11px;
-        color: white;
-    }
+  .herotitle > h1 {
+    font-size: 35px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 11px;
+    color: white;
+  }
 
-    .herotitle>p {
-        color: white;
-        text-transform: capitalize;
-        margin-bottom: 20px;
-    }
+  .herotitle > p {
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
 
-    .choices {
-        position: relative;
-        height: 70vh;
-        width: 90%;
-        margin: 10% auto;
-        padding: 15px;
-        border-radius: 40px;
-        text-align: center;
-    }
+  .choices {
+    position: relative;
+    height: 70vh;
+    width: 90%;
+    margin: 10% auto;
+    padding: 15px;
+    border-radius: 40px;
+    text-align: center;
+  }
 
-    .choices>h3 {
-        color: white;
-    }
+  .choices > h3 {
+    color: white;
+  }
 
-    .moviechoice {
-        height: 40px;
-        width: 40%;
-        margin: 10px 5px;
-        padding: 8px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: rgb(204, 40, 73);
-        border: 2px solid rgb(204, 40, 73);
-        background-color: transparent;
-    }
+  .moviechoice {
+    height: 40px;
+    width: 40%;
+    margin: 10px 5px;
+    padding: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(204, 40, 73);
+    border: 2px solid rgb(204, 40, 73);
+    background-color: transparent;
+  }
 
-    .next {
-        margin-top: 30px;
-        color: rgb(221, 221, 221);
-    }
+  .next {
+    margin-top: 30px;
+    color: rgb(221, 221, 221);
+    text-decoration: none;
+  }
 
-    input {
-        height: 30px;
-        width: 100%;
-    }
+  input {
+    height: 30px;
+    width: 100%;
+  }
 }
