@@ -1,0 +1,298 @@
+* {
+    font-family: 'Poppins';
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(27, 27, 27);
+
+}
+
+img {}
+
+@media screen and (min-width: 320px) and (max-width: 570px) {
+    .main {
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: relative;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        z-index: 10;
+    }
+
+    .moviebox {
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .moviecreds {
+        position: absolute;
+        bottom: 0;
+        height: 38%;
+        width: 80%;
+        left: 10%;
+        line-height: 29px;
+    }
+
+    .moviecreds>h1 {
+        color: white;
+    }
+
+    .moviecreds>p {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .moviecreds>h3 {
+        color: rgb(228, 228, 228);
+    }
+
+    .add {
+        background-color: rgb(204, 40, 73);
+        color: white;
+        height: 40px;
+        width: 200px;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 571px) and (max-width: 770px) {
+    .main {
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: relative;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        z-index: 10;
+    }
+
+    .moviebox {
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .moviecreds {
+        position: absolute;
+        bottom: 0;
+        height: 38%;
+        width: 80%;
+        left: 10%;
+        line-height: 29px;
+    }
+
+    .moviecreds>h1 {
+        color: white;
+    }
+
+    .moviecreds>p {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .moviecreds>h3 {
+        color: rgb(228, 228, 228);
+    }
+
+    .add {
+        background-color: rgb(204, 40, 73);
+        color: white;
+        height: 40px;
+        width: 200px;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 771px) and (max-width: 1024px) {
+    .main {
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: relative;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        z-index: 10;
+    }
+
+    .moviebox {
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .moviecreds {
+        position: absolute;
+        bottom: 0;
+        height: 38%;
+        width: 80%;
+        left: 10%;
+        line-height: 29px;
+    }
+
+    .moviecreds>h1 {
+        color: white;
+    }
+
+    .moviecreds>p {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .moviecreds>h3 {
+        color: rgb(228, 228, 228);
+    }
+
+    .add {
+        background-color: rgb(204, 40, 73);
+        color: white;
+        height: 40px;
+        width: 200px;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .main {
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: relative;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        z-index: 10;
+    }
+
+    .moviebox {
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .moviecreds {
+        position: absolute;
+        bottom: 0;
+        height: 38%;
+        width: 80%;
+        left: 10%;
+        line-height: 29px;
+    }
+
+    .moviecreds>h1 {
+        color: white;
+    }
+
+    .moviecreds>p {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .moviecreds>h3 {
+        color: rgb(228, 228, 228);
+    }
+
+    .add {
+        background-color: rgb(204, 40, 73);
+        color: white;
+        height: 40px;
+        width: 200px;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2560px) {
+    .main {
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: relative;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        z-index: 10;
+    }
+
+    .moviebox {
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .moviecreds {
+        position: absolute;
+        bottom: 0;
+        height: 38%;
+        width: 80%;
+        left: 10%;
+        line-height: 29px;
+    }
+
+    .moviecreds>h1 {
+        color: white;
+    }
+
+    .moviecreds>p {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .moviecreds>h3 {
+        color: rgb(228, 228, 228);
+    }
+
+    .add {
+        background-color: rgb(204, 40, 73);
+        color: white;
+        height: 40px;
+        width: 200px;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

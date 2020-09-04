@@ -17,6 +17,7 @@ input:focus {
     outline: none;
 }
 
+
 @media screen and (min-width: 320px) and (max-width: 570px) {
 
     @keyframes go {
@@ -65,6 +66,8 @@ input:focus {
         }
     }
 
+
+
     .main {
         height: 200vh;
         width: 100%;
@@ -79,6 +82,289 @@ input:focus {
 
     .movies {
         height: 13vh;
+        width: 97%;
+        margin: 35px 5px;
+    }
+
+    .genre {
+        color: white;
+        animation-name: show;
+        animation-duration: 3s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .movierow {
+        height: 100%;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+    }
+
+    .box {
+        height: 100%;
+        width: 50%;
+        background-color: rgb(29, 29, 29);
+        display: inline-block;
+        margin: 0 1px;
+        box-shadow: 0 8px 10px;
+        animation-name: up;
+        animation-duration: .5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+
+    }
+
+    .box:hover {
+        box-shadow: blanchedalmond 1px 1px 1px;
+    }
+
+    .box2 {
+        height: 100%;
+        width: 50%;
+        background-color: rgb(143, 143, 143);
+        display: inline-block;
+        animation-name: up;
+        animation-duration: .7s;
+        animation-iteration-count: initial;
+        animation-direction: alternate-reverse forwards;
+    }
+
+    .topmenu {
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 10px;
+    }
+
+    .burger {
+        margin: auto 0;
+        padding: 2px 4px;
+        height: 25px;
+        width: 25px;
+        border-radius: 10%;
+        border: white 3px solid;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .burger:hover {
+        border: rgb(204, 40, 73) 3px solid;
+        cursor: pointer;
+    }
+
+    .burger>.line1 {
+        width: 90%;
+        height: 4px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+    .burger>.line2 {
+        width: 70%;
+        height: 4px;
+        background-color: white;
+        margin: 2px 0;
+    }
+
+    .herotitle {
+        height: 7vh;
+        width: 50%;
+        text-align: center;
+    }
+
+    .herotitle>h1 {
+        font-size: 35px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 6.5px;
+        color: white;
+        animation-name: colorUp;
+        animation-duration: 1.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .herotitle>p {
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        animation-name: colorUp;
+        animation-duration: 4.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .usericon {
+        margin: auto 0;
+        height: 45px;
+        width: 45px;
+        background-color: rgb(204, 40, 73);
+        border: 2px solid white;
+        border-radius: 50%;
+        animation-name: re;
+        animation-duration: 3.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+
+    }
+
+    .searchdiv {
+        height: 5vh;
+        width: 100%;
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .searchdiv>input {
+        height: 80%;
+        width: 70%;
+        background-color: white;
+        border-radius: 30px 0 0 30px;
+        margin: auto 0;
+        padding-left: 7px;
+        font-size: 11px;
+        border: 1px solid lightgrey;
+    }
+
+    .searchdiv>.submitsearch {
+        height: 80%;
+        width: 15%;
+        background-color: rgb(204, 40, 73);
+        border-radius: 0 30px 30px 0px;
+        border: none;
+        margin: auto 0;
+    }
+
+    .submitsearch>i {
+        font-size: 12px;
+        color: white;
+        margin: auto 0;
+    }
+
+    .side {
+        background-color: rgb(14, 14, 14);
+        position: fixed;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+        transition: 0.25s;
+        opacity: 0.9;
+    }
+
+    .side>ul {
+        position: absolute;
+        top: 10%;
+        width: 60%;
+        display: block;
+        list-style: none;
+    }
+
+    .side>ul>a {
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+        font-size: 14px;
+        color: white;
+        background-color: rgb(204, 40, 73);
+        margin: 10px 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .side>i {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+    .sidesub {
+        height: 100%;
+        width: 40%;
+        background-color: black;
+        opacity: .7;
+
+    }
+
+}
+
+@media screen and (min-width: 571px) and (max-width: 970px) {
+
+    @keyframes go {
+        0% {
+            width: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+
+    @keyframes up {
+        0% {
+            height: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            height: 100%;
+        }
+    }
+
+    @keyframes re {
+        0% {
+
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes colorUp {
+        0% {
+            color: transparent;
+
+        }
+
+        100% {
+            color: white;
+        }
+    }
+
+
+
+    .main {
+        height: 340vh;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        animation-name: go;
+        animation-duration: .3s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .movies {
+        height: 30vh;
         width: 97%;
         margin: 35px 5px;
     }
@@ -287,4 +573,566 @@ input:focus {
         color: rgb(255, 255, 255);
         transition: 0.3s;
     }
+
+
+}
+
+
+@media screen and (min-width: 971px) and (max-width: 1440px) {
+
+    @keyframes go {
+        0% {
+            width: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+
+    @keyframes up {
+        0% {
+            height: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            height: 100%;
+        }
+    }
+
+    @keyframes re {
+        0% {
+
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes colorUp {
+        0% {
+            color: transparent;
+
+        }
+
+        100% {
+            color: white;
+        }
+    }
+
+
+
+    .main {
+        height: 350vh;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        animation-name: go;
+        animation-duration: .3s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .movies {
+        height: 30vh;
+        width: 97%;
+        margin: 35px 5px;
+    }
+
+    .genre {
+        color: white;
+        animation-name: show;
+        animation-duration: 3s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .movierow {
+        height: 100%;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+    }
+
+    .box {
+        height: 100%;
+        width: 20%;
+        background-color: rgb(29, 29, 29);
+        display: inline-block;
+        margin: 0 1px;
+        box-shadow: 0 8px 10px;
+        animation-name: up;
+        animation-duration: .5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+
+    }
+
+    .box:hover {
+        box-shadow: blanchedalmond 1px 1px 1px;
+    }
+
+    .box2 {
+        height: 100%;
+        width: 20%;
+        background-color: rgb(143, 143, 143);
+        display: inline-block;
+        animation-name: up;
+        animation-duration: .7s;
+        animation-iteration-count: initial;
+        animation-direction: alternate-reverse forwards;
+    }
+
+    .topmenu {
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 10px;
+    }
+
+    .burger {
+        margin: auto 0;
+        padding: 2px 4px;
+        height: 25px;
+        width: 25px;
+        border-radius: 10%;
+        border: white 3px solid;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .burger:hover {
+        border: rgb(204, 40, 73) 3px solid;
+        cursor: pointer;
+    }
+
+    .burger>.line1 {
+        width: 90%;
+        height: 4px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+    .burger>.line2 {
+        width: 70%;
+        height: 4px;
+        background-color: white;
+        margin: 2px 0;
+    }
+
+    .herotitle {
+        height: 7vh;
+        width: 50%;
+        text-align: center;
+    }
+
+    .herotitle>h1 {
+        font-size: 35px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 6.5px;
+        color: white;
+        animation-name: colorUp;
+        animation-duration: 1.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .herotitle>p {
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        animation-name: colorUp;
+        animation-duration: 4.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .usericon {
+        margin: auto 0;
+        height: 65px;
+        width: 65px;
+        background-color: rgb(204, 40, 73);
+        border: 2px solid white;
+        border-radius: 50%;
+        animation-name: re;
+        animation-duration: 3.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+
+    }
+
+    .searchdiv {
+        height: 5vh;
+        width: 100%;
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .searchdiv>input {
+        height: 100%;
+        width: 70%;
+        background-color: white;
+        border-radius: 30px 0 0 30px;
+        margin: auto 0;
+        padding-left: 15px;
+        font-size: 14px;
+        border: 1px solid lightgrey;
+    }
+
+    .searchdiv>.submitsearch {
+        height: 100%;
+        width: 15%;
+        background-color: rgb(204, 40, 73);
+        border-radius: 0 30px 30px 0px;
+        border: none;
+        margin: auto 0;
+    }
+
+    .submitsearch>i {
+        font-size: 16px;
+        color: white;
+        margin: auto 0;
+    }
+
+    .side {
+        background-color: rgb(14, 14, 14);
+        position: fixed;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+        transition: 0.25s;
+        opacity: 0.9;
+    }
+
+    .side>ul {
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        display: block;
+        list-style: none;
+    }
+
+    .side>ul>a {
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+        font-size: 14px;
+        color: white;
+        background-color: rgb(204, 40, 73);
+        margin: 10px 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .side>i {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2570px) {
+
+    @keyframes go {
+        0% {
+            width: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+
+    @keyframes up {
+        0% {
+            height: 0%;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            height: 100%;
+        }
+    }
+
+    @keyframes re {
+        0% {
+
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes colorUp {
+        0% {
+            color: transparent;
+
+        }
+
+        100% {
+            color: white;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .main {
+        height: 400vh;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        animation-name: go;
+        animation-duration: .3s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .movies {
+        height: 45vh;
+        width: 97%;
+        margin: 35px 5px;
+    }
+
+    .genre {
+        color: white;
+        animation-name: show;
+        animation-duration: 3s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+        font-size: 30px;
+    }
+
+    .movierow {
+        height: 100%;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .movierow::-webkit-scrollbar {
+        background-color: transparent;
+    }
+
+    .box {
+        height: 100%;
+        width: 15%;
+        background-color: rgb(29, 29, 29);
+        display: inline-block;
+        margin: 0 1px;
+        box-shadow: 0 8px 10px;
+        animation-name: up;
+        animation-duration: .5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+
+    }
+
+    .box:hover {
+        box-shadow: blanchedalmond 1px 1px 1px;
+    }
+
+    .box2 {
+        height: 100%;
+        width: 15%;
+        background-color: rgb(143, 143, 143);
+        display: inline-block;
+        animation-name: up;
+        animation-duration: .7s;
+        animation-iteration-count: initial;
+        animation-direction: alternate-reverse forwards;
+    }
+
+    .topmenu {
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 10px;
+    }
+
+    .burger {
+        margin: auto 0;
+        padding: 2px 4px;
+        height: 25px;
+        width: 25px;
+        border-radius: 10%;
+        border: white 3px solid;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .burger:hover {
+        border: rgb(204, 40, 73) 3px solid;
+        cursor: pointer;
+    }
+
+    .burger>.line1 {
+        width: 90%;
+        height: 4px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+    .burger>.line2 {
+        width: 70%;
+        height: 4px;
+        background-color: white;
+        margin: 2px 0;
+    }
+
+    .herotitle {
+        height: 7vh;
+        width: 50%;
+        text-align: center;
+    }
+
+    .herotitle>h1 {
+        font-size: 65px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 6.5px;
+        color: white;
+        animation-name: colorUp;
+        animation-duration: 1.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .herotitle>p {
+        font-size: 24px;
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        animation-name: colorUp;
+        animation-duration: 4.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+    }
+
+    .usericon {
+        margin: auto 0;
+        height: 75px;
+        width: 75px;
+        background-color: rgb(204, 40, 73);
+        border: 2px solid white;
+        border-radius: 50%;
+        animation-name: re;
+        animation-duration: 3.5s;
+        animation-iteration-count: initial;
+        animation-direction: normal forwards;
+
+    }
+
+    .searchdiv {
+        height: 5vh;
+        width: 100%;
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .searchdiv>input {
+        height: 100%;
+        width: 70%;
+        background-color: white;
+        border-radius: 30px 0 0 30px;
+        margin: auto 0;
+        padding-left: 27px;
+        font-size: 20px;
+        border: 1px solid lightgrey;
+    }
+
+    .searchdiv>.submitsearch {
+        height: 100%;
+        width: 15%;
+        background-color: rgb(204, 40, 73);
+        border-radius: 0 30px 30px 0px;
+        border: none;
+        margin: auto 0;
+    }
+
+    .submitsearch>i {
+        font-size: 24px;
+        color: white;
+        margin: auto 0;
+    }
+
+    .side {
+        background-color: rgb(14, 14, 14);
+        position: fixed;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+        transition: 0.25s;
+        opacity: 0.9;
+    }
+
+    .side>ul {
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        display: block;
+        list-style: none;
+    }
+
+    .side>ul>a {
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+        font-size: 14px;
+        color: white;
+        background-color: rgb(204, 40, 73);
+        margin: 10px 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .side>i {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+
 }

@@ -66,8 +66,9 @@ input:focus {
     }
 
     .main {
-        height: 100%;
+        height: 90vh;
         width: 100%;
+        margin: auto;
     }
 
     .profilepage {
@@ -112,6 +113,8 @@ input:focus {
     .username {
         color: white;
         font-weight: bold;
+        position: absolute;
+
     }
 
 }
