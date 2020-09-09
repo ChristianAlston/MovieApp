@@ -2,13 +2,16 @@ const express = require('express')
 const router = express.Router()
 const request = require('request')
 const helmet = require('helmet')
+require('dotenv').config()
 
 const dom = require('../domManip')
-
-const apiKey = '1fb720b97cc13e580c2c35e1138f90f8'
-const apiBaseUrl = 'http://api.themoviedb.org/3';
-const nowPlayingUrl = `${apiBaseUrl}/movie/now_playing?api_key=${apiKey}`;
-const imageBaseUrl = 'http://image.tmdb.org/t/p/w300';
+ 
+const apiKey = process.env.API_KEY
+const apiBaseUrl = process.env.API_BASE_URL
+const nowPlayingUrl = `${process.env.API_BASE_URL}${process.env.API_EXTRA}${process.env.API_KEY}`
+const imageBaseUrl = process.env.IMAGE_BASE_URL
+const key = process.env.KEY
+const secret = process.env.SECRET_KEY
 
 router.use(helmet.contentSecurityPolicy({ directives: { defaultSrc: ["'self'"], scriptSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'ajax.googleapis.com'], styleSrc: ["'self'", 'fonts.googleapis.com'], imgSrc: ["'self'", 'image.tmdb.org'] } }))
 
@@ -52,6 +55,22 @@ router.get('/movie/:id', (req, res, next) => {
     request.get(movieUrl, (error, response, movieData) => {
         const parsedData = JSON.parse(movieData)
         res.render('movie', {
+            parsedData
+        })
+    })
+})
+
+router.get('/play/:id', (req,res,next) =>{
+    const movieID = req.params.id
+    const ipAdd = data.ip
+    const playMovie = `https://vsrequest.video/request.php?key=${key}&secret_key=${secret}&video_id=${movieID}&tmdb=0&tv=0&s=*0&ip=${ipAdd}`
+    request.get('https://json.geoiplookup.io/api', (error, response, ipData) => {
+        const data = JSON.parse(ipData)
+        console.log(data)
+    })
+    request.get(playMovie, (error, response, movieAddress) => {
+        const parsedData = JSON.parse(movieAddress)
+        res.render('play', {
             parsedData
         })
     })
