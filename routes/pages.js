@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const request = require('request')
 const helmet = require('helmet')
+const { response } = require('express')
 require('dotenv').config()
 
 
@@ -13,7 +14,19 @@ const imageBaseUrl = process.env.IMAGE_BASE_URL
 const key = process.env.KEY
 const secret = process.env.SECRET_KEY
 
-router.use(helmet.contentSecurityPolicy({ directives: { defaultSrc: ["'self'"], scriptSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'ajax.googleapis.com'], styleSrc: ["'self'", 'fonts.googleapis.com'], imgSrc: ["'self'", 'image.tmdb.org'] } }))
+router.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        styleSrc: ["'self'", "https:", "'unsafe-inline'"],
+        fontSrc: ["'self'", "https:", "data:"],
+        imgSrc: ["'self'", "https://image.tmdb.org"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        blockAllMixedContent: [],
+        upgradeInsecureRequests: [],
+        baseUri: ["'self'"],
+        frameAncestors: ["'self'"]
+    }
+}))
 
 // router.use((req, res, next) => {
 //     res.locals.dom = dom
@@ -38,7 +51,13 @@ router.get('/moviegenres', (req, res) => {
     res.render('moviegenres')
 })
 
-router.get('/moviepage', (req, res) => {
+router.get('/moviepage/:genres', (req, res) => {
+    console.log(req.params.genres)
+    // request.get(movieStuff, (error, response, movieData) => {
+    //     const genre = JSON.parse(movieData)
+    //     console.log(genre)
+
+    // })
     request.get(nowPlayingUrl, (error, response, movieData) => {
         const parsedData = JSON.parse(movieData)
         console.log(parsedData)
@@ -56,6 +75,7 @@ router.get('/movie/:id', (req, res, next) => {
         const parsedData = JSON.parse(movieData)
         res.render('movie', {
             parsedData
+
         })
     })
 })

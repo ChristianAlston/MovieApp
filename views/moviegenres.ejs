@@ -18,25 +18,41 @@
   </div>
   <div class="choices">
     <h3 class="watch">What do you like to watch?</h3>
-    <button class="genre1 moviechoice">Action</button>
-    <button class="genre2 moviechoice">Comedy</button>
-    <button class="genre3 moviechoice">Drama</button>
-    <button class="genre4 moviechoice">Crime</button>
-    <button class="genre5 moviechoice">Romance</button>
-    <button class="genre6 moviechoice">Horror</button>
-    <button class="genre7 moviechoice">Mystery</button>
-    <button class="genre8 moviechoice">Sci-fi</button>
-    <button class="genre9 moviechoice">Animation</button>
-    <button class="genre10 moviechoice">Kids Shows</button>
-    <a href="moviepage" class="next">
-      <h2>Start Watching</h2>
-    </a>
+    <button id="action" class="genre1 moviechoice" type='button'>Action</button>
+    <button id="comedy" class="genre2 moviechoice" type='button'>Comedy</button>
+    <button id="drama" class="genre3 moviechoice" type='button'>Drama</button>
+    <button id="crime" class="genre4 moviechoice" type='button'>Crime</button>
+    <button id="romance" class="genre5 moviechoice" type='button'>Romance</button>
+    <button id="horror" class="genre6 moviechoice" type='button'>Horror</button>
+    <button id="mystery" class="genre7 moviechoice" type='button'>Mystery</button>
+    <button id="scifi" class="genre8 moviechoice" type='button'>Sci-fi</button>
+    <button id="animation" class="genre9 moviechoice" type='button'>Animation</button>
+    <button id="kids" class="genre10 moviechoice" type='button'>Kids Shows</button>
+
+    <h2 class="next">Start Watching</h2>
+
   </div>
 </body>
 <script>
   let moviedb = [];
   let genreArray = [];
   let movieChoices = document.querySelectorAll(".moviechoice");
+  movieChoices.forEach(moviechoice => {
+    moviechoice.addEventListener('click', (evt) => {
+      console.log(evt.target)
+      let id = evt.target.id
+      if (id in genreArray) {
+        genreArray = [...genreArray.filter(g => g != id)]
+      } else {
+        genreArray = [...genreArray.filter(g => g != id), id]
+      }
+    })
+  })
+  let nextButton = document.querySelector('.next')
+  nextButton.addEventListener('click', () => {
+    console.log(genreArray)
+    window.location = `/moviepage/${genreArray.join(',')}`
+  })
 </script>
 
 </html>

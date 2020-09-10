@@ -20,7 +20,7 @@
             <img src="<%= imageBaseUrl + parsedData.poster_path %>" alt="">
         </div>
         <div class="moviecreds">
-            <a href="/moviepage">Back</a>
+            <a href="/moviepage/:genres">Back</a>
             <h1><%= parsedData.original_title %></h1>
             <h3><%= parsedData.genres[0].name %></h3>
             <p><%= parsedData.release_date %> </p>

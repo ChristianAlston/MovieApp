@@ -41,14 +41,11 @@
     <div class="movies">
       <h4 class="genre">Action/Adventure</h4>
       <div class="movierow">
-        <div class="box"></div>
-        <div class="box2"></div>
-        <div class="box"></div>
-        <div class="box2"></div>
-        <div class="box"></div>
-        <div class="box2"></div>
-        <div class="box"></div>
-        <div class="box2"></div>
+        <% parsedData.forEach((movie)=>{%>
+        <div class="box">
+          <a href="/movie/<%=movie.id%>"> <img src="<%= imageBaseUrl + movie.poster_path %>" alt=""></a>
+        </div>
+        <%})%>
       </div>
     </div>
     <div class="movies">
