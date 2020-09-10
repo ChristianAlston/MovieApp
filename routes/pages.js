@@ -4,8 +4,8 @@ const request = require('request')
 const helmet = require('helmet')
 require('dotenv').config()
 
-const dom = require('../domManip')
- 
+
+
 const apiKey = process.env.API_KEY
 const apiBaseUrl = process.env.API_BASE_URL
 const nowPlayingUrl = `${process.env.API_BASE_URL}${process.env.API_EXTRA}${process.env.API_KEY}`
@@ -15,10 +15,10 @@ const secret = process.env.SECRET_KEY
 
 router.use(helmet.contentSecurityPolicy({ directives: { defaultSrc: ["'self'"], scriptSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'ajax.googleapis.com'], styleSrc: ["'self'", 'fonts.googleapis.com'], imgSrc: ["'self'", 'image.tmdb.org'] } }))
 
-router.use((req, res, next) => {
-    res.locals.dom = dom
-    next()
-})
+// router.use((req, res, next) => {
+//     res.locals.dom = dom
+//     next()
+// })
 
 router.use((req, res, next) => {
     res.locals.imageBaseUrl = imageBaseUrl
@@ -60,20 +60,25 @@ router.get('/movie/:id', (req, res, next) => {
     })
 })
 
-router.get('/play/:id', (req,res,next) =>{
+router.get('/play/:id', (req, res, next) => {
     const movieID = req.params.id
-    const ipAdd = data.ip
-    const playMovie = `https://vsrequest.video/request.php?key=${key}&secret_key=${secret}&video_id=${movieID}&tmdb=0&tv=0&s=*0&ip=${ipAdd}`
+
     request.get('https://json.geoiplookup.io/api', (error, response, ipData) => {
         const data = JSON.parse(ipData)
-        console.log(data)
-    })
-    request.get(playMovie, (error, response, movieAddress) => {
-        const parsedData = JSON.parse(movieAddress)
-        res.render('play', {
-            parsedData
+        console.log(data, 68)
+        const ipAdd = data.ip
+        const playMovie = `https://vsrequest.video/request.php?key=${key}&secret_key=${secret}&video_id=${movieID}&tmdb=1&tv=0&s=*0&ip=${ipAdd}`
+        request.get(playMovie, (error, response, movieAddress) => {
+            console.log(movieAddress, 72)
+            const parsedData = JSON.parse(movieAddress)
+            console.log(parsedData, 74)
+            res.render('play', {
+                playMovie: parsedData
+            })
         })
     })
+    // const movieAddress =
+
 })
 
 router.post('/search', (req, res, next) => {

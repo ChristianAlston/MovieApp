@@ -7,6 +7,7 @@ const ejs = require('ejs')
 const cookieParser = require('cookie-parser')
 const pageRoutes = require('./routes/pages')
 const userRoutes = require('./routes/users')
+// const dom = require('./domManip')
 const PORT = 4000
 
 
