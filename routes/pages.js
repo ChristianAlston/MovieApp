@@ -74,8 +74,7 @@ router.get('/movie/:id', (req, res, next) => {
     request.get(movieUrl, (error, response, movieData) => {
         const parsedData = JSON.parse(movieData)
         res.render('movie', {
-            parsedData
-
+            parsedData, movieID
         })
     })
 })
@@ -83,17 +82,15 @@ router.get('/movie/:id', (req, res, next) => {
 router.get('/play/:id', (req, res, next) => {
     const movieID = req.params.id
 
-    request.get('https://json.geoiplookup.io/api', (error, response, ipData) => {
-        const data = JSON.parse(ipData)
-        console.log(data, 68)
-        const ipAdd = data.ip
-        const playMovie = `https://vsrequest.video/request.php?key=${key}&secret_key=${secret}&video_id=${movieID}&tmdb=1&tv=0&s=*0&ip=${ipAdd}`
+    request.get('http://ip6only.me/api/', (error, response, ipData) => {
+        const data = ipData.substring(5, 42)
+        const playMovie = `https://streamvideo.link/getvideo?key=${key}&video_id=${movieID}&tmdb=1`
+        // const playMovie = `https://vsrequest.video/request.php?key=${key}&secret_key=${secret}&video_id=${movieID}&tmdb=1&tv=0&s=*0&ip=${data}`
+        console.log(playMovie)
         request.get(playMovie, (error, response, movieAddress) => {
-            console.log(movieAddress, 72)
-            const parsedData = JSON.parse(movieAddress)
-            console.log(parsedData, 74)
+            console.log(movieAddress)
             res.render('play', {
-                playMovie: parsedData
+                movieAddress: movieAddress
             })
         })
     })
