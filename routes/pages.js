@@ -61,6 +61,7 @@ router.get('/moviepage/:genres', (req, res) => {
     request.get(nowPlayingUrl, (error, response, movieData) => {
         const parsedData = JSON.parse(movieData)
         console.log(parsedData)
+        console.log(parsedData.results[0].genre_ids)
         res.render('moviepage', {
             parsedData: parsedData.results
         })
