@@ -1,31 +1,67 @@
 const express = require('express')
 const router = express.Router()
+const mongoose = require('mongoose')
 
-// instead of app. you would use router. to tell your machine how to route. 
-router.post('/signup', (req, res) => {
-    let user = {
+
+
+router.post('/signup', (req, res, next) => {
+    const userSchema = new mongoose.Schema({
+        name: { type: String, required: [true, 'User does not have a name'] },
+        username: String,
+        email: String,
+        password: String,
+        birthday: String
+    })
+
+    const User = new mongoose.model('user', userSchema)
+
+    const newUser = new User({
         name: req.body.name,
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
         birthday: req.body.birthday
-    }
-    res.render('signup', user)
+    })
+
+    newUser.save((err) => {
+        if (err) {
+            console.log(err, 'There was an error adding new user to the database.')
+        } else {
+            console.log('New user successfully added to the database.')
+            res.render('../views/moviegenres')
+        }
+    })
+    console.log(newUser)
+    User.deleteMany({}, (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log('Users deleted cool')
+        }
+    })
 })
 
-// router.use only applies to THIS router and NOT the main configuration file. in other words, the main file does not know about router.use and therefore whatever is written here will not apply to the main file. 
 
-// // when you go to this url you will run all the functionality within 
-// // this will render the page you requested and all you need is the page name
-// router.get("/", (req, res) => {
-//     // right here you are rendering all key value pairs inside of the user object template
-//     let user = {
-//         name: "Christian",
-//         age: "24",
-//     };
-//     res.render("index", user);
-// });
 
-// // if you want to use this in another file, you will need to export it here and then import it in the file you are exporting to 
+router.post('/', (req, res, next) => {
+    const username = req.body.username
+    const password = req.body.password
+
+    User.findOne({ email: username }, (err, validated) => {
+        if (err) {
+            console.log(err)
+        } else {
+            if (validated) {
+                if (validated.password === password) {
+                    res.render('../views/moviegenres')
+                }
+            }
+        }
+    })
+})
+
+
+
+
 module.exports = router
 

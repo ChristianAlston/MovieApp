@@ -1,63 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/signup.css" />
-  </head>
-  <body>
-    <div class="herotitle">
-      <h1>flixify</h1>
-      <p>movies everywhere</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/signup.css" />
+</head>
+
+<body>
+  <div class="herotitle">
+    <h1>flixify</h1>
+    <p>movies everywhere</p>
+  </div>
+  <div class="main">
+    <div class="herobox">
+      <h1>Sign-Up, its Free!</h1>
     </div>
-    <div class="main">
-      <div class="herobox">
-        <h1>Sign-Up, its Free!</h1>
-      </div>
-      <div class="formbox">
-        <h1>Create an Account</h1>
-        <p>Join other users</p>
-        <form action="/signup" method="POST">
-          <label for="name">full name</label><br />
-          <input type="text" name="name" id="name" required />
+    <div class="formbox">
+      <h1>Create an Account</h1>
+      <p>Join other users</p>
+      <form action="/signup" method="POST">
+        <label for="name">full name</label><br />
+        <input type="text" name="name" id="name" required />
 
-          <label for="username">username</label><br /><input
-            type="text"
-            name="username"
-            id="username"
-            required
-            minlength="7"
-          />
+        <label for="username">username</label><br /><input type="text" name="username" id="username" required
+          minlength="1" />
 
-          <label for="email">email</label><br />
-          <input type="email" name="email" id="email" required />
+        <label for="email">email</label><br />
+        <input type="email" name="email" id="email" required />
 
-          <label for="password">password</label><br /><input
-            type="password"
-            name="password"
-            id="password"
-            required
-            minlength="7"
-          />
+        <label for="password">password</label><br /><input type="password" name="password" id="password" required
+          minlength="1" />
 
-          <label for="birthday">birthday</label><br /><input
-            type="date"
-            name="birthday"
-            id="birthday"
-            class="birthdaybox"
-            required
-          />
-          <button class="signup" type=" submit">Signup</button>
-        </form>
+        <label for="birthday">birthday</label><br /><input type="date" name="birthday" id="birthday" class="birthdaybox"
+          required />
+        <button class="signup" type=" submit">Signup</button>
+      </form>
 
-        <div class="avatarboxchoose"></div>
-      </div>
-      <a href="moviegenres">Sign up for an account</a>
+      <div class="avatarboxchoose"></div>
     </div>
-  </body>
+    <a href="moviegenres">Sign up for an account</a>
+  </div>
+</body>
+
 </html>
