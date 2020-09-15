@@ -2,3 +2,4 @@ node_modules/
 routes
 private/
 .env
+.DS_Store
