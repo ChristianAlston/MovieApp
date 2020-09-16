@@ -17,6 +17,51 @@ input:focus {
     outline: none;
 }
 
+.checkbox {
+    -webkit-appearance: none;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    color: transparent;
+    position: relative;
+    top: 0px;
+    display: inline-block;
+}
+
+.giantWrapper {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.moviechoice>h2 {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moviechoice {
+    display: inline-block;
+    margin: 0 auto;
+    width: 70%;
+    position: relative;
+    transition: .2s;
+}
+
+.moviechoice:hover {
+    cursor: pointer;
+}
+
+.firstWrapper,
+.secondWrapper {
+    width: 50%;
+    text-align: center;
+}
+
 @media screen and (min-width: 320px) and (max-width: 570px) {
     @keyframes re {
         0% {
@@ -62,7 +107,7 @@ input:focus {
         position: relative;
         height: 70vh;
         width: 90%;
-        margin: 10% auto;
+        margin: 5% auto;
         padding: 15px;
         border-radius: 40px;
         text-align: center;
@@ -76,97 +121,23 @@ input:focus {
         color: white;
     }
 
-    .genre1 {
-        animation-name: re;
-        animation-duration: .8s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre2 {
-        animation-name: re;
-        animation-duration: 1s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre3 {
-        animation-name: re;
-        animation-duration: .7s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre4 {
-        animation-name: re;
-        animation-duration: .1s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre5 {
-        animation-name: re;
-        animation-duration: .8;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre6 {
-        animation-name: re;
-        animation-duration: .1s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre7 {
-        animation-name: re;
-        animation-duration: .8s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre8 {
-        animation-name: re;
-        animation-duration: .3s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre9 {
-        animation-name: re;
-        animation-duration: .1s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
-
-    .genre10 {
-        animation-name: re;
-        animation-duration: .8s;
-        animation-iteration-count: initial;
-        animation-direction: forwards;
-
-    }
 
     .moviechoice {
         height: 40px;
-        width: 40%;
+        width: 80%;
         margin: 10px 5px;
-        padding: 8px;
         font-weight: bold;
         text-transform: uppercase;
         color: rgb(204, 40, 73);
         border: 2px solid rgb(204, 40, 73);
         background-color: transparent;
 
+    }
+
+    .moviechoice>h2 {
+        font-size: 18px;
+        display: flex;
+        padding-top: 7px;
     }
 
     .moviechoice:active {
@@ -232,7 +203,7 @@ input:focus {
         position: relative;
         height: 70vh;
         width: 90%;
-        margin: 10% auto;
+        margin: 5% auto;
         padding: 15px;
         border-radius: 40px;
         text-align: center;
@@ -240,6 +211,7 @@ input:focus {
         animation-duration: .8s;
         animation-iteration-count: initial;
         animation-direction: normal forwards;
+
     }
 
     .choices>h3 {
@@ -328,9 +300,9 @@ input:focus {
 
     .moviechoice {
         height: 47px;
-        width: 40%;
+        width: 70%;
         margin: 10px 5px;
-        padding: 8px;
+        padding-top: 10px;
         font-weight: bold;
         font-size: 15px;
         text-transform: uppercase;
@@ -403,7 +375,7 @@ input:focus {
         position: relative;
         height: 70vh;
         width: 90%;
-        margin: 10% auto;
+        margin: 5% auto;
         padding: 15px;
         border-radius: 40px;
         text-align: center;
@@ -499,10 +471,10 @@ input:focus {
     }
 
     .moviechoice {
-        height: 57px;
-        width: 40%;
+        height: 50px;
+        width: 80%;
         margin: 10px 5px;
-        padding: 8px;
+        padding-top: 15px;
         font-weight: bold;
         font-size: 15px;
         text-transform: uppercase;
@@ -577,7 +549,7 @@ input:focus {
         position: relative;
         height: 70vh;
         width: 90%;
-        margin: 10% auto;
+        margin: 5% auto;
         padding: 15px;
         border-radius: 40px;
         text-align: center;
@@ -673,10 +645,10 @@ input:focus {
     }
 
     .moviechoice {
-        height: 67px;
-        width: 40%;
+        height: 60px;
+        width: 70%;
         margin: 10px 5px;
-        padding: 8px;
+        padding-top: 10px;
         font-weight: bold;
         font-size: 22px;
         text-transform: uppercase;
