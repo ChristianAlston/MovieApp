@@ -1,5 +1,5 @@
 const express = require('express')
-const router = express.Router()
+const app = express()
 const request = require('request')
 const helmet = require('helmet')
 const { response } = require('express')
@@ -14,7 +14,7 @@ const imageBaseUrl = process.env.IMAGE_BASE_URL
 const key = process.env.KEY
 const secret = process.env.SECRET_KEY
 
-router.use(helmet.contentSecurityPolicy({
+app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
         styleSrc: ["'self'", "https:", "'unsafe-inline'"],
@@ -33,25 +33,16 @@ router.use(helmet.contentSecurityPolicy({
 //     next()
 // })
 
-router.use((req, res, next) => {
+app.use((req, res, next) => {
     res.locals.imageBaseUrl = imageBaseUrl
     next()
 })
 
-router.get('/', (req, res) => {
+// router.get('/moviegenres', (req, res) => {
+//     res.render('moviegenres')
+// })
 
-    res.render('index')
-})
-
-router.get('/signup', (req, res) => {
-    res.render('signup')
-})
-
-router.get('/moviegenres', (req, res) => {
-    res.render('moviegenres')
-})
-
-router.get('/moviepage/:genres', (req, res) => {
+app.get('/moviepage/:genres', (req, res) => {
     console.log(req.params.genres)
     // request.get(movieStuff, (error, response, movieData) => {
     //     const genre = JSON.parse(movieData)
@@ -66,10 +57,9 @@ router.get('/moviepage/:genres', (req, res) => {
             parsedData: parsedData.results
         })
     })
-
 })
 
-router.get('/movie/:id', (req, res, next) => {
+app.get('/movie/:id', (req, res, next) => {
     const movieID = req.params.id
     const movieUrl = `${apiBaseUrl}/movie/${movieID}?api_key=${apiKey}`
     request.get(movieUrl, (error, response, movieData) => {
@@ -80,7 +70,7 @@ router.get('/movie/:id', (req, res, next) => {
     })
 })
 
-router.get('/play/:id', (req, res, next) => {
+app.get('/play/:id', (req, res, next) => {
     const movieID = req.params.id
 
     request.get('http://ip6only.me/api/', (error, response, ipData) => {
@@ -99,15 +89,15 @@ router.get('/play/:id', (req, res, next) => {
 
 })
 
-router.post('/search', (req, res, next) => {
+app.post('/search', (req, res, next) => {
     const search = encodeURI(req.body.search)
     const movieUrl = `${apiBaseUrl}/search/?query=${search}&api_key=${apiKey}`
 })
 
 
 
-router.get('/profile', (req, res) => {
+app.get('/profile', (req, res) => {
     res.render('profile')
 })
 
-module.exports = router
+module.exports = app
