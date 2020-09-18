@@ -1,0 +1,20 @@
+* {
+    font-family: 'Poppins';
+}
+
+body {
+    color: black;
+
+}
+
+div {
+    text-align: center;
+    height: 10vh;
+    width: 100%;
+    margin: 5% auto;
+}
+
+h1 {
+    color: white;
+
+}
