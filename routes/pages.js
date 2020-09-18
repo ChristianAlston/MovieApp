@@ -10,6 +10,9 @@ require('dotenv').config()
 const apiKey = process.env.API_KEY
 const apiBaseUrl = process.env.API_BASE_URL
 const nowPlayingUrl = `${process.env.API_BASE_URL}${process.env.API_EXTRA}${process.env.API_KEY}`
+const popularMovies = `${process.env.API_BASE_URL}${process.env.API_EXTRA2}${process.env.API_KEY}`
+const upcoming = `${process.env.API_BASE_URL}${process.env.API_EXTRA3}${process.env.API_KEY}`
+const topRated = `${process.env.API_BASE_URL}${process.env.API_EXTRA4}${process.env.API_KEY}`
 const imageBaseUrl = process.env.IMAGE_BASE_URL
 const key = process.env.KEY
 const secret = process.env.SECRET_KEY
@@ -46,12 +49,25 @@ app.get('/moviepage/:genres', (req, res) => {
     //     console.log(genre)
 
     // })
+
     request.get(nowPlayingUrl, (error, response, movieData) => {
         const parsedData = JSON.parse(movieData)
-        console.log(parsedData)
-        console.log(parsedData.results[0].genre_ids)
-        res.render('moviepage', {
-            parsedData: parsedData.results
+        request.get(upcoming, (error, response, movieData) => {
+            const parsedData3 = JSON.parse(movieData)
+            request.get(topRated, (error, response, movieData) => {
+                const parsedData4 = JSON.parse(movieData)
+                request.get(popularMovies, (error, response, movieData) => {
+                    const parsedData2 = JSON.parse(movieData)
+                    console.log(parsedData2)
+                    console.log(parsedData2.results[0].genre_ids)
+                    res.render('moviepage', {
+                        parsedData: parsedData.results,
+                        parsedData2: parsedData2.results,
+                        parsedData3: parsedData3.results,
+                        parsedData4: parsedData4.results
+                    })
+                })
+            })
         })
     })
 })
