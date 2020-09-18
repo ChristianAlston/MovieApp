@@ -17,7 +17,7 @@ app.use(helmet())
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-app.use(bodyParser())
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 app.use(express.static('css'))
@@ -40,13 +40,15 @@ mongoose.connect("mongodb://localhost:27017/FlixifyUsersDB", { useNewUrlParser: 
 mongoose.set('useCreateIndex', true)
 
 const userSchema = new mongoose.Schema({
-    name: { type: String, required: [true, 'User does not have a name'] },
     username: String,
     email: String,
     password: String,
     birthday: String,
     movies: Array
 })
+
+
+
 
 userSchema.plugin(passportLocalMongoose)
 
@@ -88,7 +90,7 @@ app.get('/logout', (req, res) => {
 })
 
 app.post('/signup', (req, res, next) => {
-    User.register({ username: req.body.username, name: req.body.name, email: req.body.email, birthday: req.body.birthday }, req.body.password, (err, user) => {
+    User.register({ username: req.body.username, email: req.body.email, birthday: req.body.birthday }, req.body.password, (err, user) => {
         if (err) {
             console.log(err)
             res.redirect('/signup')
@@ -101,29 +103,35 @@ app.post('/signup', (req, res, next) => {
     })
 })
 
-app.post('/moviegenres', (req, res, next) => {
-    let movies = req.body.checkbox
-    User.movies.push(movies)
-    console.log(User.movies)
-})
+
 
 app.post('/', (req, res, next) => {
     const user = new User({
         username: req.body.username,
-        password: req.body.username
+        password: req.body.password
     })
 
     req.login(user, (err) => {
         if (err) {
             console.log(err)
         } else {
-            passport.authenticate('local')
+
             res.redirect('/moviepage/:genres')
         }
     })
 })
 
+app.post('/moviegenres', (req, res, next) => {
+    const user = new User({
+        username: req.body.username
+    })
+    if (req.isAuthenticated) {
+        user.movies.push(req.body)
+        console.log(user.movies)
+        user.save()
+    }
 
+})
 
 app.listen(PORT, () => {
     console.log(`Port ready on port ${PORT}`)
