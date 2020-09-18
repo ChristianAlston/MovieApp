@@ -38,9 +38,6 @@ app.use((req, res, next) => {
     next()
 })
 
-// router.get('/moviegenres', (req, res) => {
-//     res.render('moviegenres')
-// })
 
 app.get('/moviepage/:genres', (req, res) => {
     console.log(req.params.genres)

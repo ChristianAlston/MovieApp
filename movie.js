@@ -76,18 +76,34 @@ app.get('/moviegenres', (req, res) => {
     }
 })
 
+app.get('/logout', (req, res) => {
+    req.logout()
+    res.redirect('/')
+})
+
 app.get('/moviepage/:genres', (req, res) => {
     if (req.isAuthenticated()) {
         res.render('moviepage/:genres')
     } else {
         res.redirect('/')
     }
+    console.log(req.params.genres)
+    // request.get(movieStuff, (error, response, movieData) => {
+    //     const genre = JSON.parse(movieData)
+    //     console.log(genre)
+
+    // })
+    request.get(nowPlayingUrl, (error, response, movieData) => {
+        const parsedData = JSON.parse(movieData)
+        console.log(parsedData)
+        console.log(parsedData.results[0].genre_ids)
+        res.render('moviepage', {
+            parsedData: parsedData.results
+        })
+    })
 })
 
-app.get('/logout', (req, res) => {
-    req.logout()
-    res.redirect('/')
-})
+
 
 app.post('/signup', (req, res, next) => {
     User.register({ username: req.body.username, email: req.body.email, birthday: req.body.birthday }, req.body.password, (err, user) => {
@@ -96,7 +112,7 @@ app.post('/signup', (req, res, next) => {
             res.redirect('/signup')
         } else {
             passport.authenticate('local')(req, res, () => {
-                res.redirect('/moviegenres')
+                res.redirect('/moviepage/:genres')
                 console.log(user)
             })
         }
@@ -129,8 +145,11 @@ app.post('/moviegenres', (req, res, next) => {
         user.movies.push(req.body)
         console.log(user.movies)
         user.save()
+        passport.authenticate('local')(req, res, () => {
+            res.redirect('/moviegenres')
+            console.log(user)
+        })
     }
-
 })
 
 app.listen(PORT, () => {
