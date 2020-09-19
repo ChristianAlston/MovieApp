@@ -7,7 +7,6 @@ require('dotenv').config()
 const app = express()
 const { v4: uuidV4 } = require('uuid')
 
-
 const apiKey = process.env.API_KEY
 const apiBaseUrl = process.env.API_BASE_URL
 const nowPlayingUrl = `${process.env.API_BASE_URL}${process.env.API_EXTRA}${process.env.API_KEY}`
@@ -36,7 +35,7 @@ app.use(helmet.contentSecurityPolicy({
             "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
             "https://kit.fontawesome.com/c939d0e917.js",
         ],
-        connectSrc: ["'self'", "ws://localhost:4000"],
+        connectSrc: ["'self'", "ws://https://flixify.herokuapp.com"],
         blockAllMixedContent: [],
         upgradeInsecureRequests: [],
         baseUri: ["'self'"],
