@@ -74,7 +74,9 @@
 
 .main__chat_window {
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
+    min-height: 27vh;
+    max-height: 27vh;
 }
 
 .messages{

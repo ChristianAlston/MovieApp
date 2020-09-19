@@ -10,6 +10,7 @@ const ecryption = require('mongoose-encryption')
 const session = require('express-session')
 const passport = require('passport')
 const passportLocalMongoose = require('passport-local-mongoose')
+require('dotenv').config()
 
 const PORT = 4000
 const app = express()
@@ -31,6 +32,8 @@ app.use(cookieParser())
 
 app.use(express.static('css'))
 app.use(express.static('images'))
+app.use(express.static(__dirname + '/public'))
+app.use('/peerjs', peerServer);
 app.use(pageRoutes)
 
 app.set('view engine', 'ejs')
@@ -61,18 +64,6 @@ userSchema.plugin(passportLocalMongoose)
 const User = new mongoose.model('user', userSchema)
 
 passport.use(User.createStrategy())
-
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
-app.use(bodyParser())
-app.use(cookieParser())
-
-app.use(express.static('css'))
-app.use(express.static('images'))
-app.use(express.static(__dirname + '/public'))
-app.use('/peerjs', peerServer);
-app.use(pageRoutes)
-app.use(userRoutes)
 
 io.on('connection', socket => {
     socket.on('join-room', (roomId, userId) => {

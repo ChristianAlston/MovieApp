@@ -1,12 +1,11 @@
 const express = require('express')
-const app = express()
+const router = express.Router()
 const request = require('request')
 const helmet = require('helmet')
 const { response } = require('express')
 require('dotenv').config()
 const app = express()
 const { v4: uuidV4 } = require('uuid')
-
 
 
 const apiKey = process.env.API_KEY
@@ -43,7 +42,7 @@ app.use(helmet.contentSecurityPolicy({
     }
 }))
 
-router.get('/play/:id', (req,res,next) => {
+app.get('/play/:id', (req,res,next) => {
     const movieID = req.params.id
     res.redirect(`/room/${uuidV4()}/${movieID}`)
 })
@@ -101,7 +100,7 @@ app.get('/movie/:id', (req, res, next) => {
     })
 })
 
-router.get('/room/:room/:id', (req, res, next) => {
+app.get('/room/:room/:id', (req, res, next) => {
     const movieID = req.params.id
     const roomId = req.params.room
     request.get('http://v6.ipv6-test.com/api/myip.php', (error, response, ipData) => {
