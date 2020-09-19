@@ -12,7 +12,6 @@ const passport = require('passport')
 const passportLocalMongoose = require('passport-local-mongoose')
 require('dotenv').config()
 
-const PORT = 4000
 const app = express()
     , http = require('http');
 const server = http.Server(app)
@@ -152,6 +151,6 @@ app.post('/', (req, res, next) => {
 })
 
 
-server.listen(PORT, () => {
-    console.log(`Port ready on port ${PORT}`)
+server.listen(process.env.PORT, () => {
+    console.log(`Port ready on port ${process.env.PORT}`)
 })
