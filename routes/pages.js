@@ -7,7 +7,6 @@ require('dotenv').config()
 const app = express()
 const { v4: uuidV4 } = require('uuid')
 
-
 const apiKey = process.env.API_KEY
 const apiBaseUrl = process.env.API_BASE_URL
 const nowPlayingUrl = `${process.env.API_BASE_URL}${process.env.API_EXTRA}${process.env.API_KEY}`
@@ -16,6 +15,7 @@ const upcoming = `${process.env.API_BASE_URL}${process.env.API_EXTRA3}${process.
 const topRated = `${process.env.API_BASE_URL}${process.env.API_EXTRA4}${process.env.API_KEY}`
 const imageBaseUrl = process.env.IMAGE_BASE_URL
 const key = process.env.KEY
+const secret = process.env.SECRET_KEY
 
 app.use(helmet.contentSecurityPolicy({
     directives: {
