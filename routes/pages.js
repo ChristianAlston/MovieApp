@@ -15,7 +15,6 @@ const upcoming = `${process.env.API_BASE_URL}${process.env.API_EXTRA3}${process.
 const topRated = `${process.env.API_BASE_URL}${process.env.API_EXTRA4}${process.env.API_KEY}`
 const imageBaseUrl = process.env.IMAGE_BASE_URL
 const key = process.env.KEY
-const secret = process.env.SECRET_KEY
 
 app.use(helmet.contentSecurityPolicy({
     directives: {
@@ -44,12 +43,6 @@ app.use((req, res, next) => {
 
 app.get('/moviepage/:genres', (req, res) => {
     console.log(req.params.genres)
-    // request.get(movieStuff, (error, response, movieData) => {
-    //     const genre = JSON.parse(movieData)
-    //     console.log(genre)
-
-    // })
-
     request.get(nowPlayingUrl, (error, response, movieData) => {
         const parsedData = JSON.parse(movieData)
         request.get(upcoming, (error, response, movieData) => {
@@ -102,9 +95,19 @@ app.get('/play/:id', (req, res, next) => {
 
 })
 
-app.post('/search', (req, res, next) => {
+app.get('/search', (req, res) => {
+    res.render('search')
+})
+
+app.post('/moviepage/:genres', (req, res, next) => {
     const search = encodeURI(req.body.search)
-    const movieUrl = `${apiBaseUrl}/search/?query=${search}&api_key=${apiKey}`
+    const searchString = `${apiBaseUrl}/search/movie?query=${search}&api_key=${apiKey}`
+    request.get(searchString, (error, response, movieData) => {
+        const parsedData = JSON.parse(movieData)
+        res.render('search', {
+            parsedData: parsedData.results
+        })
+    })
 })
 
 

@@ -59,6 +59,8 @@ passport.use(User.createStrategy())
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
+
+
 app.get('/', (req, res) => {
 
     res.render('index')
@@ -66,6 +68,13 @@ app.get('/', (req, res) => {
 
 app.get('/signup', (req, res) => {
     res.render('signup')
+})
+
+app.get('/profile', (req, res) => {
+    res.render('profile', {
+        username: req.body.username
+
+    })
 })
 
 app.get('/moviegenres', (req, res) => {
