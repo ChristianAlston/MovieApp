@@ -81,7 +81,7 @@ input:focus {
     }
 
     .movies {
-        height: 13vh;
+        height: 15vh;
         width: 97%;
         margin: 35px 5px;
     }
@@ -641,7 +641,7 @@ input:focus {
     }
 
     .movies {
-        height: 30vh;
+        height: 35vh;
         width: 97%;
         margin: 35px 5px;
     }
@@ -919,7 +919,8 @@ input:focus {
     }
 
     .movies {
-        height: 45vh;
+        min-height: 50vh;
+        max-height: 60vh;
         width: 97%;
         margin: 35px 5px;
     }
