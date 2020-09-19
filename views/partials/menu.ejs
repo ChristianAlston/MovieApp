@@ -1,5 +1,5 @@
 <nav id="side" class="side">
-  <h3>Welcome back!</h3>
+  <h3>Welcome</h3>
   <ul>
     <a href="moviepage" id="list">
       <li>Home</li>
@@ -35,8 +35,7 @@
     <div></div>
   </a>
 </div>
-
-<form class="searchdiv" action="/search?source=hp" method="post">
+<form class="searchdiv" action="/moviepage/:genres?source=hp" method="post">
   <input type="search" name="search" id="search" placeholder="Search for a movie..." />
   <button class="submitsearch" type="submit">
     <i class="fas fa-search"></i>
