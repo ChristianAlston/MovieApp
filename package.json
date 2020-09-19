@@ -28,9 +28,11 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
+    "peer": "^0.5.3",
     "pg-promise": "^10.5.8",
     "request": "^2.88.2",
-    "scrollreveal": "^4.0.7"
+    "scrollreveal": "^4.0.7",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {},
   "repository": {

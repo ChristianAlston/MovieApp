@@ -406,7 +406,7 @@ input:focus {
 
     .box2 {
         height: 100%;
-        width: 50%;
+        width: auto;
         background-color: rgb(143, 143, 143);
         display: inline-block;
         animation-name: up;
@@ -578,7 +578,7 @@ input:focus {
 }
 
 
-@media screen and (min-width: 971px) and (max-width: 1440px) {
+@media screen and (min-width: 971px) and (max-width: 1430px) {
 
     @keyframes go {
         0% {
@@ -629,7 +629,7 @@ input:focus {
 
 
     .main {
-        height: 350vh;
+        height: 270vh;
         width: 100%;
         background-color: black;
         display: flex;
@@ -641,7 +641,14 @@ input:focus {
     }
 
     .movies {
-        height: 35vh;
+        height: 50vh;
+        width: 97%;
+        margin: 35px 5px;
+    }
+
+    .movies2 {
+        min-height: 50vh;
+        max-height: 60vh;
         width: 97%;
         margin: 35px 5px;
     }
@@ -660,15 +667,13 @@ input:focus {
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-
     }
 
     .box {
         height: 100%;
-        width: 20%;
+        width: auto;
         background-color: rgb(29, 29, 29);
         display: inline-block;
-        margin: 0 1px;
         box-shadow: 0 8px 10px;
         animation-name: up;
         animation-duration: .5s;
@@ -683,7 +688,7 @@ input:focus {
 
     .box2 {
         height: 100%;
-        width: 20%;
+        width: auto;
         background-color: rgb(143, 143, 143);
         display: inline-block;
         animation-name: up;
@@ -854,7 +859,7 @@ input:focus {
 
 }
 
-@media screen and (min-width: 1441px) and (max-width: 2570px) {
+@media screen and (min-width: 1431px) and (max-width: 2570px) {
 
     @keyframes go {
         0% {
@@ -907,7 +912,7 @@ input:focus {
     }
 
     .main {
-        height: 400vh;
+        height: 275vh;
         width: 100%;
         background-color: black;
         display: flex;
@@ -918,7 +923,14 @@ input:focus {
         animation-direction: normal forwards;
     }
 
+
     .movies {
+        height: auto;
+        width: 97%;
+        margin: 35px 5px;
+    }
+
+    .movies2 {
         min-height: 50vh;
         max-height: 60vh;
         width: 97%;
@@ -948,7 +960,7 @@ input:focus {
 
     .box {
         height: 100%;
-        width: 15%;
+        width: auto;
         background-color: rgb(29, 29, 29);
         display: inline-block;
         margin: 0 1px;
@@ -966,7 +978,7 @@ input:focus {
 
     .box2 {
         height: 100%;
-        width: 15%;
+        width: auto;
         background-color: rgb(143, 143, 143);
         display: inline-block;
         animation-name: up;

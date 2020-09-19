@@ -1,5 +1,4 @@
 const express = require('express')
-const app = express()
 const path = require('path')
 const helmet = require('helmet')
 const bodyParser = require('body-parser')
@@ -7,11 +6,22 @@ const ejs = require('ejs')
 const cookieParser = require('cookie-parser')
 const pageRoutes = require('./routes/pages')
 const mongoose = require('mongoose')
+const ecryption = require('mongoose-encryption')
 const session = require('express-session')
 const passport = require('passport')
 const passportLocalMongoose = require('passport-local-mongoose')
+require('dotenv').config()
 
 const PORT = 4000
+const app = express()
+    , http = require('http');
+const server = http.Server(app)
+const { ExpressPeerServer } = require('peer')
+const peerServer = ExpressPeerServer(server, {
+    debug: true
+})
+const io = require('socket.io')(server)
+
 
 app.use(helmet())
 
@@ -22,6 +32,8 @@ app.use(cookieParser())
 
 app.use(express.static('css'))
 app.use(express.static('images'))
+app.use(express.static(__dirname + '/public'))
+app.use('/peerjs', peerServer);
 app.use(pageRoutes)
 
 app.set('view engine', 'ejs')
@@ -47,42 +59,41 @@ const userSchema = new mongoose.Schema({
     movies: Array
 })
 
-
-
-
 userSchema.plugin(passportLocalMongoose)
 
 const User = new mongoose.model('user', userSchema)
 
 passport.use(User.createStrategy())
 
+io.on('connection', socket => {
+    socket.on('join-room', (roomId, userId) => {
+        socket.join(roomId)
+        socket.to(roomId).broadcast.emit('user-connected', userId);
+        // messages
+        socket.on('message', (message) => {
+            //send message to the same room
+            io.to(roomId).emit('createMessage', message)
+        });
+
+        socket.on('disconnect', () => {
+            socket.to(roomId).broadcast.emit('user-disconnected', userId)
+        })
+    })
+})
+
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
 
 
 app.get('/', (req, res) => {
-
     res.render('index')
 })
 
 app.get('/signup', (req, res) => {
     res.render('signup')
-})
-
-app.get('/profile', (req, res) => {
-    res.render('profile', {
-        username: req.body.username
-
-    })
-})
-
-app.get('/moviegenres', (req, res) => {
-    if (req.isAuthenticated()) {
-        res.render('moviegenres')
-    } else {
-        res.redirect('/')
-    }
 })
 
 app.get('/logout', (req, res) => {
@@ -97,11 +108,7 @@ app.get('/moviepage/:genres', (req, res) => {
         res.redirect('/')
     }
     console.log(req.params.genres)
-    // request.get(movieStuff, (error, response, movieData) => {
-    //     const genre = JSON.parse(movieData)
-    //     console.log(genre)
 
-    // })
     request.get(nowPlayingUrl, (error, response, movieData) => {
         const parsedData = JSON.parse(movieData)
         console.log(parsedData)
@@ -128,8 +135,6 @@ app.post('/signup', (req, res, next) => {
     })
 })
 
-
-
 app.post('/', (req, res, next) => {
     const user = new User({
         username: req.body.username,
@@ -146,21 +151,7 @@ app.post('/', (req, res, next) => {
     })
 })
 
-app.post('/moviegenres', (req, res, next) => {
-    const user = new User({
-        username: req.body.username
-    })
-    if (req.isAuthenticated) {
-        user.movies.push(req.body)
-        console.log(user.movies)
-        user.save()
-        passport.authenticate('local')(req, res, () => {
-            res.redirect('/moviegenres')
-            console.log(user)
-        })
-    }
-})
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Port ready on port ${PORT}`)
 })
