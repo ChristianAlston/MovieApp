@@ -23,7 +23,8 @@ app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'",
             "https://streamwatching.today",
-            "https://oload.party/video/"
+            "https://oload.party/video/",
+            "https://flixify.herokuapp.com:4000/"
         ],
         styleSrc: ["'self'", "https:", "'unsafe-inline'"],
         fontSrc: ["'self'", "https:", "data:"],
