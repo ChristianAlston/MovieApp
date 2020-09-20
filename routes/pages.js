@@ -23,9 +23,7 @@ app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'",
             "https://streamwatching.today",
-            "https://oload.party/video/",
-            "ws://",
-            "wss://"
+            "https://oload.party/video/"
         ],
         styleSrc: ["'self'", "https:", "'unsafe-inline'"],
         fontSrc: ["'self'", "https:", "data:"],
