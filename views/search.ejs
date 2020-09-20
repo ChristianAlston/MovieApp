@@ -16,7 +16,7 @@
     <%- include ('./partials/menu'); %>
 
     <div class="movies2">
-        <h4 class="results">Results</h4>
+        <h4 class="genre">Results</h4>
         <div class="movierow">
             <% parsedData.forEach((movie)=>{%>
             <div class="box">
@@ -26,5 +26,21 @@
         </div>
     </div>
 </body>
+<script>
+    let showMenu = () => {
+        document.getElementById("side").style.width = "100%";
+    };
+
+    let closeMenu = () => {
+        document.getElementById("side").style.width = "0%";
+    };
+
+    document.getElementById("side").addEventListener("click", () => {
+        document.getElementById("side").style.width = "0%";
+    });
+
+    document.getElementById("burger").addEventListener("click", showMenu);
+    document.getElementById("close").addEventListener("click", closeMenu);
+</script>
 
 </html>

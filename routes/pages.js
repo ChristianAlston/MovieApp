@@ -17,6 +17,8 @@ const imageBaseUrl = process.env.IMAGE_BASE_URL
 const key = process.env.KEY
 const secret = process.env.SECRET_KEY
 
+
+
 app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'",

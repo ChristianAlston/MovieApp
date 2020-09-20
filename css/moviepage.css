@@ -69,7 +69,7 @@ input:focus {
 
 
     .main {
-        height: 200vh;
+        height: 270vh;
         width: 100%;
         background-color: black;
         display: flex;
@@ -81,7 +81,7 @@ input:focus {
     }
 
     .movies {
-        height: 15vh;
+        height: 50vh;
         width: 97%;
         margin: 35px 5px;
     }
@@ -105,7 +105,7 @@ input:focus {
 
     .box {
         height: 100%;
-        width: 50%;
+        width: auto;
         background-color: rgb(29, 29, 29);
         display: inline-block;
         margin: 0 1px;
@@ -123,7 +123,7 @@ input:focus {
 
     .box2 {
         height: 100%;
-        width: 50%;
+        width: auto;
         background-color: rgb(143, 143, 143);
         display: inline-block;
         animation-name: up;
@@ -259,13 +259,13 @@ input:focus {
         flex-direction: column;
         z-index: 5;
         transition: 0.25s;
-        opacity: 0.9;
+        opacity: 0.97;
     }
 
     .side>ul {
         position: absolute;
         top: 10%;
-        width: 60%;
+        width: 100%;
         display: block;
         list-style: none;
     }
@@ -274,11 +274,11 @@ input:focus {
         text-decoration: none;
         display: block;
         transition: 0.3s;
-        font-size: 14px;
+        font-size: 18px;
         color: white;
         background-color: rgb(204, 40, 73);
         margin: 10px 0;
-        padding: 10px 0;
+        padding: 15px 0;
         text-align: center;
     }
 
@@ -291,13 +291,6 @@ input:focus {
         transition: 0.3s;
     }
 
-    .sidesub {
-        height: 100%;
-        width: 40%;
-        background-color: black;
-        opacity: .7;
-
-    }
 
 }
 
@@ -352,7 +345,7 @@ input:focus {
 
 
     .main {
-        height: 340vh;
+        height: 250vh;
         width: 100%;
         background-color: black;
         display: flex;
@@ -364,7 +357,13 @@ input:focus {
     }
 
     .movies {
-        height: 30vh;
+        height: 50vh;
+        width: 97%;
+        margin: 35px 5px;
+    }
+
+    .movies2 {
+        height: 50vh;
         width: 97%;
         margin: 35px 5px;
     }
@@ -388,7 +387,7 @@ input:focus {
 
     .box {
         height: 100%;
-        width: 50%;
+        width: auto;
         background-color: rgb(29, 29, 29);
         display: inline-block;
         margin: 0 1px;

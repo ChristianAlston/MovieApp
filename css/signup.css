@@ -68,7 +68,7 @@ input:focus {
         height: 85vh;
         background-color: white;
         width: 95%;
-        margin: 10% auto;
+        margin: 5% auto;
         border-radius: 40px;
         position: relative;
         box-shadow: rgb(0, 0, 0) 0px 10px 10px;
@@ -127,6 +127,7 @@ input:focus {
         color: white;
         font-weight: 400;
         transform: translateY(70%);
+        font-size: 27px;
     }
 
     .avatarbox {
@@ -183,26 +184,14 @@ input:focus {
         border-bottom: lightgray 1px solid;
         height: 34px;
         width: 100%;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
         background-color: white;
     }
 
-    .formbox>a {
-        position: absolute;
-        right: 5%;
-        bottom: 35%;
-        font-size: 12px;
-        text-decoration: none;
-        color: rgb(255, 55, 96);
-    }
-
     .signup {
-        position: absolute;
-        bottom: -14%;
         height: 40px;
-        width: 80%;
+        width: 100%;
         background-color: transparent;
-        left: 10%;
         border: 2px solid rgb(255, 55, 96);
         color: rgb(255, 55, 96);
         text-transform: uppercase;
@@ -215,6 +204,11 @@ input:focus {
         transform: translate(50%);
         text-decoration: none;
         color: rgb(167, 167, 167);
+    }
+
+    .create,
+    .join {
+        margin: 0 auto;
     }
 }
 
@@ -365,14 +359,14 @@ input:focus {
 
     form {
         position: absolute;
-        bottom: 15%;
+        bottom: 10%;
         width: 100%;
     }
 
     label {
         color: rgb(167, 167, 167);
         float: left;
-        font-size: 12px;
+        font-size: 15px;
         margin-top: -5px;
     }
 
@@ -382,41 +376,29 @@ input:focus {
         border-left: none;
         border-right: none;
         border-bottom: lightgray 1px solid;
-        height: 34px;
+        height: 40px;
         width: 100%;
-        margin-bottom: 12px;
+        font-size: 17px;
+        margin-bottom: 18px;
         background-color: white;
     }
 
-    .formbox>a {
-        position: absolute;
-        right: 5%;
-        bottom: 35%;
-        font-size: 12px;
-        text-decoration: none;
-        color: rgb(255, 55, 96);
-    }
-
     .signup {
-        position: absolute;
-        bottom: -14%;
-        height: 40px;
+        height: 45px;
         width: 80%;
         background-color: transparent;
-        left: 10%;
         border: 2px solid rgb(255, 55, 96);
         color: rgb(255, 55, 96);
         text-transform: uppercase;
         font-weight: bold;
+        font-size: 16px;
     }
 
-    .main>a {
-        position: absolute;
-        bottom: 5%;
-        transform: translate(50%);
-        text-decoration: none;
-        color: rgb(167, 167, 167);
+    .create,
+    .join {
+        margin: 0 auto;
     }
+
 }
 
 @media screen and (min-width: 871px) and (max-width: 1080px) {
@@ -469,8 +451,8 @@ input:focus {
     .main {
         height: 85vh;
         background-color: white;
-        width: 95%;
-        margin: 10% auto;
+        width: 80%;
+        margin: 5% auto;
         border-radius: 40px;
         position: relative;
         box-shadow: rgb(0, 0, 0) 0px 10px 10px;
@@ -516,7 +498,7 @@ input:focus {
                 rgba(255, 55, 96, 1) 0%,
                 rgb(197, 38, 38) 100%);
         text-align: center;
-        height: 22%;
+        height: 20%;
         border-radius: 40px 40px 0 0;
         padding: 10px;
         animation-name: up;
@@ -529,19 +511,6 @@ input:focus {
         color: white;
         font-weight: 400;
         transform: translateY(70%);
-    }
-
-    .avatarbox {
-        height: 120px;
-        width: 120px;
-        border-radius: 50%;
-        background-image: url(/profilepic.jpg);
-        background-position: top;
-        background-size: cover;
-        border: 2px solid rgb(221, 221, 221);
-        box-shadow: 1px 5px 10px lightgrey;
-        margin: auto;
-        transform: translateY(45%);
     }
 
     .formbox {
@@ -566,14 +535,14 @@ input:focus {
 
     form {
         position: absolute;
-        bottom: 15%;
+        bottom: 10%;
         width: 100%;
     }
 
     label {
         color: rgb(167, 167, 167);
         float: left;
-        font-size: 12px;
+        font-size: 17px;
         margin-top: -5px;
     }
 
@@ -583,9 +552,9 @@ input:focus {
         border-left: none;
         border-right: none;
         border-bottom: lightgray 1px solid;
-        height: 34px;
+        height: 45px;
         width: 100%;
-        margin-bottom: 12px;
+        margin-bottom: 19px;
         background-color: white;
     }
 
@@ -599,16 +568,14 @@ input:focus {
     }
 
     .signup {
-        position: absolute;
-        bottom: -14%;
-        height: 40px;
+        height: 45px;
         width: 80%;
         background-color: transparent;
-        left: 10%;
         border: 2px solid rgb(255, 55, 96);
         color: rgb(255, 55, 96);
         text-transform: uppercase;
         font-weight: bold;
+        font-size: 17px;
     }
 
     .main>a {
@@ -617,6 +584,11 @@ input:focus {
         transform: translate(50%);
         text-decoration: none;
         color: rgb(167, 167, 167);
+    }
+
+    .create,
+    .join {
+        margin: 0 auto;
     }
 }
 
@@ -668,7 +640,7 @@ input:focus {
     }
 
     .main {
-        height: 85vh;
+        height: 75vh;
         background-color: white;
         width: 80%;
         margin: 5% auto;
@@ -791,6 +763,11 @@ input:focus {
         text-decoration: none;
         color: rgb(167, 167, 167);
     }
+
+    .create,
+    .join {
+        margin: 0 auto;
+    }
 }
 
 @media screen and (min-width: 1441px) and (max-width: 2570px) {
@@ -843,7 +820,7 @@ input:focus {
     .main {
         height: 75vh;
         background-color: white;
-        width: 75%;
+        width: 80%;
         margin: 5% auto;
         border-radius: 40px;
         position: relative;
@@ -911,7 +888,7 @@ input:focus {
 
     .formbox {
         height: 65%;
-        width: 70%;
+        width: 80%;
         margin: 5% auto;
         text-align: center;
 
