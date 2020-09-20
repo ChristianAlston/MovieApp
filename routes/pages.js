@@ -37,7 +37,7 @@ app.use(helmet.contentSecurityPolicy({
             "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
             "https://kit.fontawesome.com/c939d0e917.js",
         ],
-        connectSrc: ["'self'", "ws://", "wss://"],
+        connectSrc: ["'self'", "ws://" + "flixify.herokuapp.com", "wss://" + "flixify.herokuapp.com"],
         blockAllMixedContent: [],
         upgradeInsecureRequests: [],
         baseUri: ["'self'"],
