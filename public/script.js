@@ -2,7 +2,7 @@ const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
   path: '/peerjs',
-  host: 'flixify.herokuapp.com',
+  host: '/',
   port: '4000'
 })
 let myVideoStream;
