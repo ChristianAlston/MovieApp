@@ -541,7 +541,7 @@ input:focus {
         flex-direction: column;
         z-index: 5;
         transition: 0.25s;
-        opacity: 0.9;
+        opacity: 0.97;
     }
 
     .side>ul {
@@ -823,7 +823,7 @@ input:focus {
         flex-direction: column;
         z-index: 5;
         transition: 0.25s;
-        opacity: 0.9;
+        opacity: 0.97;
     }
 
     .side>ul {
@@ -911,7 +911,7 @@ input:focus {
     }
 
     .main {
-        height: 275vh;
+        height: 335vh;
         width: 100%;
         background-color: black;
         display: flex;
@@ -1114,7 +1114,7 @@ input:focus {
         flex-direction: column;
         z-index: 5;
         transition: 0.25s;
-        opacity: 0.9;
+        opacity: 0.97;
     }
 
     .side>ul {
@@ -1129,11 +1129,11 @@ input:focus {
         text-decoration: none;
         display: block;
         transition: 0.3s;
-        font-size: 14px;
+        font-size: 16px;
         color: white;
         background-color: rgb(204, 40, 73);
         margin: 10px 0;
-        padding: 10px 0;
+        padding: 15px 0;
         text-align: center;
     }
 

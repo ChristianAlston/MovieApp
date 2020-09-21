@@ -818,10 +818,10 @@ input:focus {
     }
 
     .main {
-        height: 75vh;
+        height: 80vh;
         background-color: white;
         width: 80%;
-        margin: 5% auto;
+        margin: 2% auto;
         border-radius: 40px;
         position: relative;
         box-shadow: rgb(0, 0, 0) 0px 10px 10px;
@@ -867,6 +867,7 @@ input:focus {
                 rgb(197, 38, 38) 100%);
         display: flex;
         justify-content: center;
+        align-content: center;
         height: 22%;
         border-radius: 40px 40px 0 0;
         animation-name: up;
@@ -878,7 +879,7 @@ input:focus {
     .herobox>h1 {
         color: rgb(255, 255, 255);
         font-weight: 400;
-        margin: auto;
+
     }
 
     .create,
