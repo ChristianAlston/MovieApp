@@ -12,7 +12,7 @@ const passport = require('passport')
 const passportLocalMongoose = require('passport-local-mongoose')
 require('dotenv').config()
 
-const PORT = 4000
+const PORT = process.env.PORT
 const app = express(), http = require('http');
 const server = http.Server(app)
 const { ExpressPeerServer } = require('peer')
