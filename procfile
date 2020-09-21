@@ -1,1 +1,1 @@
-web: node movie.js
+web: npm start
