@@ -24,6 +24,7 @@ app.use(helmet.contentSecurityPolicy({
         defaultSrc: ["'self'",
             "https://streamwatching.today",
             "https://oload.party/video/",
+            "https://flixify.herokuapp.com:4000/"
         ],
         styleSrc: ["'self'", "https:", "'unsafe-inline'"],
         fontSrc: ["'self'", "https:", "data:"],
@@ -35,7 +36,7 @@ app.use(helmet.contentSecurityPolicy({
             "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
             "https://kit.fontawesome.com/c939d0e917.js",
         ],
-        connectSrc: ["'self'", "ws://https://flixify.herokuapp.com"],
+        connectSrc: ["'self'", "wss://" + "flixify.herokuapp.com:4000", "flixify.herokuapp.com:4000"],
         blockAllMixedContent: [],
         upgradeInsecureRequests: [],
         baseUri: ["'self'"],
