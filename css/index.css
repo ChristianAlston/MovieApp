@@ -119,17 +119,35 @@ input:focus {
         transform: translateY(70%);
     }
 
+    .avatarWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transform: translateY(40%);
+    }
+
     .avatarbox {
-        height: 120px;
-        width: 120px;
+        height: 130px;
+        width: 130px;
         border-radius: 50%;
         background-image: url(/profilepic.jpg);
         background-position: top;
         background-size: cover;
         border: 2px solid rgb(221, 221, 221);
         box-shadow: 1px 5px 10px lightgrey;
-        margin: auto;
-        transform: translateY(45%);
+        margin: 0 10px;
+    }
+
+    .avatarbox2 {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        background-image: url(/nathan.jpg);
+        background-position: center;
+        background-size: cover;
+        border: 2px solid rgb(221, 221, 221);
+        box-shadow: 1px 5px 10px lightgrey;
+        margin: 0 10px;
     }
 
     .formbox {
@@ -314,17 +332,35 @@ input:focus {
         transform: translateY(70%);
     }
 
+    .avatarWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transform: translateY(40%);
+    }
+
     .avatarbox {
-        height: 120px;
-        width: 120px;
+        height: 130px;
+        width: 130px;
         border-radius: 50%;
         background-image: url(/profilepic.jpg);
         background-position: top;
         background-size: cover;
         border: 2px solid rgb(221, 221, 221);
         box-shadow: 1px 5px 10px lightgrey;
-        margin: auto;
-        transform: translateY(45%);
+        margin: 0 10px;
+    }
+
+    .avatarbox2 {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        background-image: url(/nathan.jpg);
+        background-position: center;
+        background-size: cover;
+        border: 2px solid rgb(221, 221, 221);
+        box-shadow: 1px 5px 10px lightgrey;
+        margin: 0 10px;
     }
 
     .formbox {
@@ -509,17 +545,35 @@ input:focus {
         transform: translateY(70%);
     }
 
+    .avatarWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transform: translateY(40%);
+    }
+
     .avatarbox {
-        height: 120px;
-        width: 120px;
+        height: 130px;
+        width: 130px;
         border-radius: 50%;
         background-image: url(/profilepic.jpg);
         background-position: top;
         background-size: cover;
         border: 2px solid rgb(221, 221, 221);
         box-shadow: 1px 5px 10px lightgrey;
-        margin: auto;
-        transform: translateY(45%);
+        margin: 0 10px;
+    }
+
+    .avatarbox2 {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        background-image: url(/nathan.jpg);
+        background-position: center;
+        background-size: cover;
+        border: 2px solid rgb(221, 221, 221);
+        box-shadow: 1px 5px 10px lightgrey;
+        margin: 0 10px;
     }
 
     .formbox {
@@ -686,14 +740,14 @@ input:focus {
                 rgba(255, 55, 96, 1) 0%,
                 rgb(197, 38, 38) 100%);
         text-align: center;
-        height: 18%;
+        height: 14%;
         border-radius: 35px 35px 0 0;
         padding: 10px;
     }
 
     .herobox>h3 {
-        color: white;
-        font-weight: 100;
+        color: rgb(255, 255, 255);
+        font-weight: 400;
         transform: translateY(70%);
     }
 
@@ -703,17 +757,35 @@ input:focus {
         transform: translateY(70%);
     }
 
+    .avatarWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transform: translateY(40%);
+    }
+
     .avatarbox {
-        height: 120px;
-        width: 120px;
+        height: 130px;
+        width: 130px;
         border-radius: 50%;
         background-image: url(/profilepic.jpg);
         background-position: top;
         background-size: cover;
         border: 2px solid rgb(221, 221, 221);
         box-shadow: 1px 5px 10px lightgrey;
-        margin: auto;
-        transform: translateY(45%);
+        margin: 0 10px;
+    }
+
+    .avatarbox2 {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        background-image: url(/nathan.jpg);
+        background-position: center;
+        background-size: cover;
+        border: 2px solid rgb(221, 221, 221);
+        box-shadow: 1px 5px 10px lightgrey;
+        margin: 0 10px;
     }
 
     .formbox {
