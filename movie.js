@@ -12,8 +12,8 @@ const passport = require('passport')
 const passportLocalMongoose = require('passport-local-mongoose')
 require('dotenv').config()
 
-const app = express()
-    , http = require('http');
+const PORT = 4000
+const app = express(), http = require('http');
 const server = http.Server(app)
 const { ExpressPeerServer } = require('peer')
 const peerServer = ExpressPeerServer(server, {
@@ -151,6 +151,6 @@ app.post('/', (req, res, next) => {
 })
 
 
-server.listen(process.env.PORT, () => {
-    console.log(`Port ready on port ${process.env.PORT}`)
+server.listen(PORT, () => {
+    console.log(`Port ready on port ${PORT}`)
 })
